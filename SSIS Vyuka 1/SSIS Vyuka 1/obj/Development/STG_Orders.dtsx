@@ -11,8 +11,8 @@
   DTS:LocaleID="1029"
   DTS:ObjectName="STG_Orders"
   DTS:PackageType="5"
-  DTS:VersionBuild="13"
-  DTS:VersionGUID="{3C4ACA1D-84C1-447A-A921-F8C12CEE326C}">
+  DTS:VersionBuild="27"
+  DTS:VersionGUID="{FBFEE116-9CA1-40F4-8BDE-3ABFAEF45E2D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -39,12 +39,30 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="8"
+      DTS:DTSID="{16C3E1C0-8794-4FED-AF52-9763C956B236}"
+      DTS:ObjectName="SourceTableName">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">Orders</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{EE21AE45-0809-4664-8498-FF0BB24F1CE5}"
+      DTS:ObjectName="SourceTableSchema">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">Sales</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
       DTS:Description="Select statement for source"
       DTS:DTSID="{539F1D70-C875-41C9-A1AF-6947A97B6679}"
       DTS:ObjectName="SrcSQLSelect">
       <DTS:Property
         DTS:DataType="8"
-        DTS:Name="ParameterValue">SELECT [OrderID]       ,[CustomerID]       ,[SalespersonPersonID]       ,[PickedByPersonID]       ,[ContactPersonID]       ,[BackorderOrderID]       ,[OrderDate]       ,[ExpectedDeliveryDate]       ,[CustomerPurchaseOrderNumber]       ,[IsUndersupplyBackordered]       ,[Comments]       ,[DeliveryInstructions]       ,[InternalComments]       ,[PickingCompletedWhen]       ,[LastEditedBy]       ,[LastEditedWhen]   FROM [Sales].[Orders]</DTS:Property>
+        DTS:Name="ParameterValue">SELECT ,,, [OrderID]       ,[CustomerID]       ,[SalespersonPersonID]       ,[PickedByPersonID]       ,[ContactPersonID]       ,[BackorderOrderID]       ,[OrderDate]       ,[ExpectedDeliveryDate]       ,[CustomerPurchaseOrderNumber]       ,[IsUndersupplyBackordered]       ,[Comments]       ,[DeliveryInstructions]       ,[InternalComments]       ,[PickingCompletedWhen]       ,[LastEditedBy]       ,[LastEditedWhen]   FROM [Sales].[Orders]</DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>
@@ -61,6 +79,80 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
+      DTS:DTSID="{80012B3E-CB85-4419-995B-F6851C431ECC}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ETLFrameworkExecutionID">
+      <DTS:VariableValue
+        DTS:DataType="3">1</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{BAA9A5C3-A502-4B57-963F-F20EC225917B}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ExecutionStatus">
+      <DTS:VariableValue
+        DTS:DataType="8">Success</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{0E2C25E1-A77D-4F7D-BFB8-8BBD74253032}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="RC_DestinationRows">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{3FFE9964-B042-4A57-86A1-37FDF55AB032}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="RC_DestinationRowsDelete">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F2436022-B4CE-4932-A3A9-2CA4C58D55A9}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="RC_DestinationRowsInsert">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1235E911-B60B-46B9-B2CF-68FC16E0445B}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="RC_DestinationRowsUpdate">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{615D0F5A-3E79-4B92-8455-9B68B2216925}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="RC_SourceTable">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{BD264DCD-5E36-4DB2-A172-956EA3125429}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Package::SourceTableSchema] + &quot;.&quot; + @[$Package::DestTableName]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SourceTableFullName">
+      <DTS:VariableValue
+        DTS:DataType="8">Sales.Orders</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
       DTS:DTSID="{0EE7C58C-B9B8-44B1-8D02-84DAE62D3FC9}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;TRUNCATE TABLE &quot; + @[$Package::DestTableSchema]+&quot;.&quot; + @[$Package::DestTableName]"
@@ -73,703 +165,891 @@
   </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\DF_Invoices"
-      DTS:CreationName="Microsoft.Pipeline"
-      DTS:Description="Data Flow Task"
-      DTS:DTSID="{399861F6-A5F5-4F41-B8BA-654CE02CF33D}"
-      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:refId="Package\EXP_SetStatusFailure"
+      DTS:CreationName="Microsoft.ExpressionTask"
+      DTS:Description="Expression Task"
+      DTS:DTSID="{A9B7429C-01A0-4162-BB8E-7D17A1EF8AD1}"
+      DTS:ExecutableType="Microsoft.ExpressionTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="DF_Invoices">
+      DTS:ObjectName="EXP_SetStatusFailure"
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
-        <pipeline
-          defaultBufferMaxRows="100"
-          defaultBufferSize="104857600"
-          version="1">
-          <components>
-            <component
-              refId="Package\DF_Invoices\DST_SQL_STG_Data"
-              componentClassID="Microsoft.OLEDBDestination"
-              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
-              description="OLE DB Destination"
-              name="DST_SQL_STG_Data"
-              usesDispositions="true"
-              version="4">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[STG].[Orders]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable">User::DestTableFullName</property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1250</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">1</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepIdentity">false</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepNulls">false</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
-                  name="FastLoadMaxInsertCommitSize">2147483647</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\DF_Invoices\DST_SQL_STG_Data.Connections[OleDbConnection]"
-                  connectionManagerID="{567E2783-0805-45C3-BD09-CE9148326EA9}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[SQL_WWIDWH]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input]"
-                  errorOrTruncationOperation="Insert"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="OLE DB Destination Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].Columns[CustomerID]"
-                      cachedDataType="i4"
-                      cachedName="CustomerID"
-                      externalMetadataColumnId="Package\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[CustomerID]"
-                      lineageId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[CustomerID]" />
-                    <inputColumn
-                      refId="Package\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].Columns[OrderID]"
-                      cachedDataType="i4"
-                      cachedName="OrderID"
-                      externalMetadataColumnId="Package\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[OrderID]"
-                      lineageId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[OrderID]" />
-                    <inputColumn
-                      refId="Package\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].Columns[ContactPersonID]"
-                      cachedDataType="i4"
-                      cachedName="ContactPersonID"
-                      externalMetadataColumnId="Package\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[ContactPersonID]"
-                      lineageId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[ContactPersonID]" />
-                    <inputColumn
-                      refId="Package\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].Columns[SalespersonPersonID]"
-                      cachedDataType="i4"
-                      cachedName="SalespersonPersonID"
-                      externalMetadataColumnId="Package\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[SalespersonPersonID]"
-                      lineageId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[SalespersonPersonID]" />
-                    <inputColumn
-                      refId="Package\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].Columns[CustomerPurchaseOrderNumber]"
-                      cachedDataType="wstr"
-                      cachedLength="20"
-                      cachedName="CustomerPurchaseOrderNumber"
-                      externalMetadataColumnId="Package\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[CustomerPurchaseOrderNumber]"
-                      lineageId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[CustomerPurchaseOrderNumber]" />
-                    <inputColumn
-                      refId="Package\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].Columns[Comments]"
-                      cachedDataType="nText"
-                      cachedName="Comments"
-                      externalMetadataColumnId="Package\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[Comments]"
-                      lineageId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[Comments]" />
-                    <inputColumn
-                      refId="Package\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].Columns[DeliveryInstructions]"
-                      cachedDataType="nText"
-                      cachedName="DeliveryInstructions"
-                      externalMetadataColumnId="Package\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[DeliveryInstructions]"
-                      lineageId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[DeliveryInstructions]" />
-                    <inputColumn
-                      refId="Package\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].Columns[InternalComments]"
-                      cachedDataType="nText"
-                      cachedName="InternalComments"
-                      externalMetadataColumnId="Package\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[InternalComments]"
-                      lineageId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[InternalComments]" />
-                    <inputColumn
-                      refId="Package\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].Columns[LastEditedBy]"
-                      cachedDataType="i4"
-                      cachedName="LastEditedBy"
-                      externalMetadataColumnId="Package\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[LastEditedBy]"
-                      lineageId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[LastEditedBy]" />
-                    <inputColumn
-                      refId="Package\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].Columns[LastEditedWhen]"
-                      cachedDataType="dbTimeStamp2"
-                      cachedName="LastEditedWhen"
-                      cachedScale="7"
-                      externalMetadataColumnId="Package\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[LastEditedWhen]"
-                      lineageId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[LastEditedWhen]" />
-                    <inputColumn
-                      refId="Package\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].Columns[PickedByPersonID]"
-                      cachedDataType="i4"
-                      cachedName="PickedByPersonID"
-                      externalMetadataColumnId="Package\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[PickedByPersonID]"
-                      lineageId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[PickedByPersonID]" />
-                    <inputColumn
-                      refId="Package\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].Columns[BackorderOrderID]"
-                      cachedDataType="i4"
-                      cachedName="BackorderOrderID"
-                      externalMetadataColumnId="Package\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[BackorderOrderID]"
-                      lineageId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[BackorderOrderID]" />
-                    <inputColumn
-                      refId="Package\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].Columns[OrderDate]"
-                      cachedDataType="dbDate"
-                      cachedName="OrderDate"
-                      externalMetadataColumnId="Package\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[OrderDate]"
-                      lineageId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[OrderDate]" />
-                    <inputColumn
-                      refId="Package\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].Columns[ExpectedDeliveryDate]"
-                      cachedDataType="dbDate"
-                      cachedName="ExpectedDeliveryDate"
-                      externalMetadataColumnId="Package\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[ExpectedDeliveryDate]"
-                      lineageId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[ExpectedDeliveryDate]" />
-                    <inputColumn
-                      refId="Package\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].Columns[IsUndersupplyBackordered]"
-                      cachedDataType="bool"
-                      cachedName="IsUndersupplyBackordered"
-                      externalMetadataColumnId="Package\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[IsUndersupplyBackordered]"
-                      lineageId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[IsUndersupplyBackordered]" />
-                    <inputColumn
-                      refId="Package\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].Columns[PickingCompletedWhen]"
-                      cachedDataType="dbTimeStamp2"
-                      cachedName="PickingCompletedWhen"
-                      cachedScale="7"
-                      externalMetadataColumnId="Package\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[PickingCompletedWhen]"
-                      lineageId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[PickingCompletedWhen]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[OrderID]"
-                      dataType="i4"
-                      name="OrderID" />
-                    <externalMetadataColumn
-                      refId="Package\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[CustomerID]"
-                      dataType="i4"
-                      name="CustomerID" />
-                    <externalMetadataColumn
-                      refId="Package\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[SalespersonPersonID]"
-                      dataType="i4"
-                      name="SalespersonPersonID" />
-                    <externalMetadataColumn
-                      refId="Package\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[PickedByPersonID]"
-                      dataType="i4"
-                      name="PickedByPersonID" />
-                    <externalMetadataColumn
-                      refId="Package\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[ContactPersonID]"
-                      dataType="i4"
-                      name="ContactPersonID" />
-                    <externalMetadataColumn
-                      refId="Package\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[BackorderOrderID]"
-                      dataType="i4"
-                      name="BackorderOrderID" />
-                    <externalMetadataColumn
-                      refId="Package\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[OrderDate]"
-                      dataType="dbDate"
-                      name="OrderDate" />
-                    <externalMetadataColumn
-                      refId="Package\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[ExpectedDeliveryDate]"
-                      dataType="dbDate"
-                      name="ExpectedDeliveryDate" />
-                    <externalMetadataColumn
-                      refId="Package\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[CustomerPurchaseOrderNumber]"
-                      dataType="wstr"
-                      length="20"
-                      name="CustomerPurchaseOrderNumber" />
-                    <externalMetadataColumn
-                      refId="Package\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[IsUndersupplyBackordered]"
-                      dataType="bool"
-                      name="IsUndersupplyBackordered" />
-                    <externalMetadataColumn
-                      refId="Package\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[Comments]"
-                      dataType="nText"
-                      name="Comments" />
-                    <externalMetadataColumn
-                      refId="Package\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[DeliveryInstructions]"
-                      dataType="nText"
-                      name="DeliveryInstructions" />
-                    <externalMetadataColumn
-                      refId="Package\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[InternalComments]"
-                      dataType="nText"
-                      name="InternalComments" />
-                    <externalMetadataColumn
-                      refId="Package\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[PickingCompletedWhen]"
-                      dataType="dbTimeStamp2"
-                      name="PickingCompletedWhen"
-                      scale="7" />
-                    <externalMetadataColumn
-                      refId="Package\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[LastEditedBy]"
-                      dataType="i4"
-                      name="LastEditedBy" />
-                    <externalMetadataColumn
-                      refId="Package\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[LastEditedWhen]"
-                      dataType="dbTimeStamp2"
-                      name="LastEditedWhen"
-                      scale="7" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\DF_Invoices\DST_SQL_STG_Data.Outputs[OLE DB Destination Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\DF_Invoices\DST_SQL_STG_Data.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\DF_Invoices\DST_SQL_STG_Data.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\DF_Invoices\DST_SQL_STG_Data.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\DF_Invoices\DST_SQL_STG_Data.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\DF_Invoices\SRC_SQL_Data"
-              componentClassID="Microsoft.OLEDBSource"
-              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
-              description="OLE DB Source"
-              name="SRC_SQL_Data"
-              usesDispositions="true"
-              version="7">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset"></property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT        InvoiceID, CustomerID, BillToCustomerID, OrderID, DeliveryMethodID, ContactPersonID, AccountsPersonID, SalespersonPersonID, PackedByPersonID, InvoiceDate, CustomerPurchaseOrderNumber, IsCreditNote, 
-                         CreditNoteReason, Comments, DeliveryInstructions, InternalComments, TotalDryItems, TotalChillerItems, DeliveryRun, RunPosition, ReturnedDeliveryData, ConfirmedDeliveryTime, ConfirmedReceivedBy, LastEditedBy, 
-                         LastEditedWhen
-FROM            Sales.Invoices</property>
-                <property
-                  dataType="System.String"
-                  description="The variable that contains the SQL command to be executed."
-                  name="SqlCommandVariable">$Package::SrcSQLSelect</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1250</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">3</property>
-                <property
-                  dataType="System.String"
-                  description="The mappings between the parameters in the SQL command and variables."
-                  name="ParameterMapping"></property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\DF_Invoices\SRC_SQL_Data.Connections[OleDbConnection]"
-                  connectionManagerID="{D0ED5ED5-C630-4BEB-853D-C2E221FDD77F}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[SQL_WWIOLTP]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <outputs>
-                <output
-                  refId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output]"
-                  name="OLE DB Source Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[CustomerID]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[CustomerID]"
-                      lineageId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[CustomerID]"
-                      name="CustomerID"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[OrderID]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[OrderID]"
-                      lineageId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[OrderID]"
-                      name="OrderID"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[ContactPersonID]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[ContactPersonID]"
-                      lineageId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[ContactPersonID]"
-                      name="ContactPersonID"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[SalespersonPersonID]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[SalespersonPersonID]"
-                      lineageId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[SalespersonPersonID]"
-                      name="SalespersonPersonID"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[CustomerPurchaseOrderNumber]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[CustomerPurchaseOrderNumber]"
-                      length="20"
-                      lineageId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[CustomerPurchaseOrderNumber]"
-                      name="CustomerPurchaseOrderNumber"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[Comments]"
-                      dataType="nText"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[Comments]"
-                      lineageId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[Comments]"
-                      name="Comments"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[DeliveryInstructions]"
-                      dataType="nText"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[DeliveryInstructions]"
-                      lineageId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[DeliveryInstructions]"
-                      name="DeliveryInstructions"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[InternalComments]"
-                      dataType="nText"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[InternalComments]"
-                      lineageId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[InternalComments]"
-                      name="InternalComments"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[LastEditedBy]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[LastEditedBy]"
-                      lineageId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[LastEditedBy]"
-                      name="LastEditedBy"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[LastEditedWhen]"
-                      dataType="dbTimeStamp2"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[LastEditedWhen]"
-                      lineageId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[LastEditedWhen]"
-                      name="LastEditedWhen"
-                      scale="7"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[PickedByPersonID]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[PickedByPersonID]"
-                      lineageId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[PickedByPersonID]"
-                      name="PickedByPersonID"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[BackorderOrderID]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[BackorderOrderID]"
-                      lineageId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[BackorderOrderID]"
-                      name="BackorderOrderID"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[OrderDate]"
-                      dataType="dbDate"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[OrderDate]"
-                      lineageId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[OrderDate]"
-                      name="OrderDate"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[ExpectedDeliveryDate]"
-                      dataType="dbDate"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[ExpectedDeliveryDate]"
-                      lineageId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[ExpectedDeliveryDate]"
-                      name="ExpectedDeliveryDate"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[IsUndersupplyBackordered]"
-                      dataType="bool"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[IsUndersupplyBackordered]"
-                      lineageId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[IsUndersupplyBackordered]"
-                      name="IsUndersupplyBackordered"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[PickingCompletedWhen]"
-                      dataType="dbTimeStamp2"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[PickingCompletedWhen]"
-                      lineageId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[PickingCompletedWhen]"
-                      name="PickingCompletedWhen"
-                      scale="7"
-                      truncationRowDisposition="FailComponent" />
-                  </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[CustomerID]"
-                      dataType="i4"
-                      name="CustomerID" />
-                    <externalMetadataColumn
-                      refId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[OrderID]"
-                      dataType="i4"
-                      name="OrderID" />
-                    <externalMetadataColumn
-                      refId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[ContactPersonID]"
-                      dataType="i4"
-                      name="ContactPersonID" />
-                    <externalMetadataColumn
-                      refId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[SalespersonPersonID]"
-                      dataType="i4"
-                      name="SalespersonPersonID" />
-                    <externalMetadataColumn
-                      refId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[CustomerPurchaseOrderNumber]"
-                      dataType="wstr"
-                      length="20"
-                      name="CustomerPurchaseOrderNumber" />
-                    <externalMetadataColumn
-                      refId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[Comments]"
-                      dataType="nText"
-                      name="Comments" />
-                    <externalMetadataColumn
-                      refId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[DeliveryInstructions]"
-                      dataType="nText"
-                      name="DeliveryInstructions" />
-                    <externalMetadataColumn
-                      refId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[InternalComments]"
-                      dataType="nText"
-                      name="InternalComments" />
-                    <externalMetadataColumn
-                      refId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[LastEditedBy]"
-                      dataType="i4"
-                      name="LastEditedBy" />
-                    <externalMetadataColumn
-                      refId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[LastEditedWhen]"
-                      dataType="dbTimeStamp2"
-                      name="LastEditedWhen"
-                      scale="7" />
-                    <externalMetadataColumn
-                      refId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[PickedByPersonID]"
-                      dataType="i4"
-                      name="PickedByPersonID" />
-                    <externalMetadataColumn
-                      refId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[BackorderOrderID]"
-                      dataType="i4"
-                      name="BackorderOrderID" />
-                    <externalMetadataColumn
-                      refId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[OrderDate]"
-                      dataType="dbDate"
-                      name="OrderDate" />
-                    <externalMetadataColumn
-                      refId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[ExpectedDeliveryDate]"
-                      dataType="dbDate"
-                      name="ExpectedDeliveryDate" />
-                    <externalMetadataColumn
-                      refId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[IsUndersupplyBackordered]"
-                      dataType="bool"
-                      name="IsUndersupplyBackordered" />
-                    <externalMetadataColumn
-                      refId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[PickingCompletedWhen]"
-                      dataType="dbTimeStamp2"
-                      name="PickingCompletedWhen"
-                      scale="7" />
-                  </externalMetadataColumns>
-                </output>
-                <output
-                  refId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output]"
-                  isErrorOut="true"
-                  name="OLE DB Source Error Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[CustomerID]"
-                      dataType="i4"
-                      lineageId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[CustomerID]"
-                      name="CustomerID" />
-                    <outputColumn
-                      refId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[OrderID]"
-                      dataType="i4"
-                      lineageId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[OrderID]"
-                      name="OrderID" />
-                    <outputColumn
-                      refId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[ContactPersonID]"
-                      dataType="i4"
-                      lineageId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[ContactPersonID]"
-                      name="ContactPersonID" />
-                    <outputColumn
-                      refId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[PickedByPersonID]"
-                      dataType="i4"
-                      lineageId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[PickedByPersonID]"
-                      name="PickedByPersonID" />
-                    <outputColumn
-                      refId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[SalespersonPersonID]"
-                      dataType="i4"
-                      lineageId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[SalespersonPersonID]"
-                      name="SalespersonPersonID" />
-                    <outputColumn
-                      refId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[BackorderOrderID]"
-                      dataType="i4"
-                      lineageId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[BackorderOrderID]"
-                      name="BackorderOrderID" />
-                    <outputColumn
-                      refId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[OrderDate]"
-                      dataType="dbDate"
-                      lineageId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[OrderDate]"
-                      name="OrderDate" />
-                    <outputColumn
-                      refId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[ExpectedDeliveryDate]"
-                      dataType="dbDate"
-                      lineageId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[ExpectedDeliveryDate]"
-                      name="ExpectedDeliveryDate" />
-                    <outputColumn
-                      refId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[CustomerPurchaseOrderNumber]"
-                      dataType="wstr"
-                      length="20"
-                      lineageId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[CustomerPurchaseOrderNumber]"
-                      name="CustomerPurchaseOrderNumber" />
-                    <outputColumn
-                      refId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[IsUndersupplyBackordered]"
-                      dataType="bool"
-                      lineageId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[IsUndersupplyBackordered]"
-                      name="IsUndersupplyBackordered" />
-                    <outputColumn
-                      refId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[Comments]"
-                      dataType="nText"
-                      lineageId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[Comments]"
-                      name="Comments" />
-                    <outputColumn
-                      refId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[DeliveryInstructions]"
-                      dataType="nText"
-                      lineageId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[DeliveryInstructions]"
-                      name="DeliveryInstructions" />
-                    <outputColumn
-                      refId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[InternalComments]"
-                      dataType="nText"
-                      lineageId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[InternalComments]"
-                      name="InternalComments" />
-                    <outputColumn
-                      refId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[PickingCompletedWhen]"
-                      dataType="dbTimeStamp2"
-                      lineageId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[PickingCompletedWhen]"
-                      name="PickingCompletedWhen"
-                      scale="7" />
-                    <outputColumn
-                      refId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[LastEditedBy]"
-                      dataType="i4"
-                      lineageId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[LastEditedBy]"
-                      name="LastEditedBy" />
-                    <outputColumn
-                      refId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[LastEditedWhen]"
-                      dataType="dbTimeStamp2"
-                      lineageId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[LastEditedWhen]"
-                      name="LastEditedWhen"
-                      scale="7" />
-                    <outputColumn
-                      refId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-          </components>
-          <paths>
-            <path
-              refId="Package\DF_Invoices.Paths[OLE DB Source Output]"
-              endId="Package\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input]"
-              name="OLE DB Source Output"
-              startId="Package\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output]" />
-          </paths>
-        </pipeline>
+        <ExpressionTask
+          Expression="@[User::ExecutionStatus] = &quot;Failure&quot;" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\SQL_TruncateDestination"
+      DTS:refId="Package\EXP_SetStatusSuccess"
+      DTS:CreationName="Microsoft.ExpressionTask"
+      DTS:Description="Expression Task"
+      DTS:DTSID="{951B6B72-5619-47D1-B080-5FB9ACB4336A}"
+      DTS:ExecutableType="Microsoft.ExpressionTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="EXP_SetStatusSuccess"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExpressionTask
+          Expression="@[User::ExecutionStatus]=&quot;Success&quot;" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQC_ETL"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{F2F3CADF-DEB0-44FF-AC39-38F3310120EB}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:MaxErrorCount="0"
+      DTS:ObjectName="SQC_ETL">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\SQC_ETL\DF_Invoices"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:DelayValidation="True"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{399861F6-A5F5-4F41-B8BA-654CE02CF33D}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:FailParentOnFailure="True"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DF_Invoices">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              defaultBufferMaxRows="100"
+              defaultBufferSize="104857600"
+              version="1">
+              <components>
+                <component
+                  refId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="DST_SQL_STG_Data"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[STG].[Orders]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable">User::DestTableFullName</property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1250</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">1</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Connections[OleDbConnection]"
+                      connectionManagerID="{567E2783-0805-45C3-BD09-CE9148326EA9}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[SQL_WWIDWH]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].Columns[CustomerID]"
+                          cachedDataType="i4"
+                          cachedName="CustomerID"
+                          externalMetadataColumnId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[CustomerID]"
+                          lineageId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[CustomerID]" />
+                        <inputColumn
+                          refId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].Columns[OrderID]"
+                          cachedDataType="i4"
+                          cachedName="OrderID"
+                          externalMetadataColumnId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[OrderID]"
+                          lineageId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[OrderID]" />
+                        <inputColumn
+                          refId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].Columns[ContactPersonID]"
+                          cachedDataType="i4"
+                          cachedName="ContactPersonID"
+                          externalMetadataColumnId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[ContactPersonID]"
+                          lineageId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[ContactPersonID]" />
+                        <inputColumn
+                          refId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].Columns[SalespersonPersonID]"
+                          cachedDataType="i4"
+                          cachedName="SalespersonPersonID"
+                          externalMetadataColumnId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[SalespersonPersonID]"
+                          lineageId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[SalespersonPersonID]" />
+                        <inputColumn
+                          refId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].Columns[CustomerPurchaseOrderNumber]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="CustomerPurchaseOrderNumber"
+                          externalMetadataColumnId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[CustomerPurchaseOrderNumber]"
+                          lineageId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[CustomerPurchaseOrderNumber]" />
+                        <inputColumn
+                          refId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].Columns[Comments]"
+                          cachedDataType="nText"
+                          cachedName="Comments"
+                          externalMetadataColumnId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[Comments]"
+                          lineageId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[Comments]" />
+                        <inputColumn
+                          refId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].Columns[DeliveryInstructions]"
+                          cachedDataType="nText"
+                          cachedName="DeliveryInstructions"
+                          externalMetadataColumnId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[DeliveryInstructions]"
+                          lineageId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[DeliveryInstructions]" />
+                        <inputColumn
+                          refId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].Columns[InternalComments]"
+                          cachedDataType="nText"
+                          cachedName="InternalComments"
+                          externalMetadataColumnId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[InternalComments]"
+                          lineageId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[InternalComments]" />
+                        <inputColumn
+                          refId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].Columns[LastEditedBy]"
+                          cachedDataType="i4"
+                          cachedName="LastEditedBy"
+                          externalMetadataColumnId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[LastEditedBy]"
+                          lineageId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[LastEditedBy]" />
+                        <inputColumn
+                          refId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].Columns[LastEditedWhen]"
+                          cachedDataType="dbTimeStamp2"
+                          cachedName="LastEditedWhen"
+                          cachedScale="7"
+                          externalMetadataColumnId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[LastEditedWhen]"
+                          lineageId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[LastEditedWhen]" />
+                        <inputColumn
+                          refId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].Columns[PickedByPersonID]"
+                          cachedDataType="i4"
+                          cachedName="PickedByPersonID"
+                          externalMetadataColumnId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[PickedByPersonID]"
+                          lineageId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[PickedByPersonID]" />
+                        <inputColumn
+                          refId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].Columns[BackorderOrderID]"
+                          cachedDataType="i4"
+                          cachedName="BackorderOrderID"
+                          externalMetadataColumnId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[BackorderOrderID]"
+                          lineageId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[BackorderOrderID]" />
+                        <inputColumn
+                          refId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].Columns[OrderDate]"
+                          cachedDataType="dbDate"
+                          cachedName="OrderDate"
+                          externalMetadataColumnId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[OrderDate]"
+                          lineageId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[OrderDate]" />
+                        <inputColumn
+                          refId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].Columns[ExpectedDeliveryDate]"
+                          cachedDataType="dbDate"
+                          cachedName="ExpectedDeliveryDate"
+                          externalMetadataColumnId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[ExpectedDeliveryDate]"
+                          lineageId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[ExpectedDeliveryDate]" />
+                        <inputColumn
+                          refId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].Columns[IsUndersupplyBackordered]"
+                          cachedDataType="bool"
+                          cachedName="IsUndersupplyBackordered"
+                          externalMetadataColumnId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[IsUndersupplyBackordered]"
+                          lineageId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[IsUndersupplyBackordered]" />
+                        <inputColumn
+                          refId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].Columns[PickingCompletedWhen]"
+                          cachedDataType="dbTimeStamp2"
+                          cachedName="PickingCompletedWhen"
+                          cachedScale="7"
+                          externalMetadataColumnId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[PickingCompletedWhen]"
+                          lineageId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[PickingCompletedWhen]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[OrderID]"
+                          dataType="i4"
+                          name="OrderID" />
+                        <externalMetadataColumn
+                          refId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[CustomerID]"
+                          dataType="i4"
+                          name="CustomerID" />
+                        <externalMetadataColumn
+                          refId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[SalespersonPersonID]"
+                          dataType="i4"
+                          name="SalespersonPersonID" />
+                        <externalMetadataColumn
+                          refId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[PickedByPersonID]"
+                          dataType="i4"
+                          name="PickedByPersonID" />
+                        <externalMetadataColumn
+                          refId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[ContactPersonID]"
+                          dataType="i4"
+                          name="ContactPersonID" />
+                        <externalMetadataColumn
+                          refId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[BackorderOrderID]"
+                          dataType="i4"
+                          name="BackorderOrderID" />
+                        <externalMetadataColumn
+                          refId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[OrderDate]"
+                          dataType="dbDate"
+                          name="OrderDate" />
+                        <externalMetadataColumn
+                          refId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[ExpectedDeliveryDate]"
+                          dataType="dbDate"
+                          name="ExpectedDeliveryDate" />
+                        <externalMetadataColumn
+                          refId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[CustomerPurchaseOrderNumber]"
+                          dataType="wstr"
+                          length="20"
+                          name="CustomerPurchaseOrderNumber" />
+                        <externalMetadataColumn
+                          refId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[IsUndersupplyBackordered]"
+                          dataType="bool"
+                          name="IsUndersupplyBackordered" />
+                        <externalMetadataColumn
+                          refId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[Comments]"
+                          dataType="nText"
+                          name="Comments" />
+                        <externalMetadataColumn
+                          refId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[DeliveryInstructions]"
+                          dataType="nText"
+                          name="DeliveryInstructions" />
+                        <externalMetadataColumn
+                          refId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[InternalComments]"
+                          dataType="nText"
+                          name="InternalComments" />
+                        <externalMetadataColumn
+                          refId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[PickingCompletedWhen]"
+                          dataType="dbTimeStamp2"
+                          name="PickingCompletedWhen"
+                          scale="7" />
+                        <externalMetadataColumn
+                          refId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[LastEditedBy]"
+                          dataType="i4"
+                          name="LastEditedBy" />
+                        <externalMetadataColumn
+                          refId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input].ExternalColumns[LastEditedWhen]"
+                          dataType="dbTimeStamp2"
+                          name="LastEditedWhen"
+                          scale="7" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SQC_ETL\DF_Invoices\RC_Source"
+                  componentClassID="Microsoft.RowCount"
+                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                  name="RC_Source">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable to hold the row count."
+                      name="VariableName">User::RC_SourceTable</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\SQC_ETL\DF_Invoices\RC_Source.Inputs[Row Count Input 1]"
+                      hasSideEffects="true"
+                      name="Row Count Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SQC_ETL\DF_Invoices\RC_Source.Outputs[Row Count Output 1]"
+                      name="Row Count Output 1"
+                      synchronousInputId="Package\SQC_ETL\DF_Invoices\RC_Source.Inputs[Row Count Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="SRC_SQL_Data"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT        InvoiceID, CustomerID, BillToCustomerID, OrderID, DeliveryMethodID, ContactPersonID, AccountsPersonID, SalespersonPersonID, PackedByPersonID, InvoiceDate, CustomerPurchaseOrderNumber, IsCreditNote, 
+                         CreditNoteReason, Comments, DeliveryInstructions, InternalComments, TotalDryItems, TotalChillerItems, DeliveryRun, RunPosition, ReturnedDeliveryData, ConfirmedDeliveryTime, ConfirmedReceivedBy, LastEditedBy, 
+                         LastEditedWhen
+FROM            Sales.Invoices</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable">$Package::SrcSQLSelect</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1250</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Connections[OleDbConnection]"
+                      connectionManagerID="{D0ED5ED5-C630-4BEB-853D-C2E221FDD77F}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[SQL_WWIOLTP]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[CustomerID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[CustomerID]"
+                          lineageId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[CustomerID]"
+                          name="CustomerID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[OrderID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[OrderID]"
+                          lineageId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[OrderID]"
+                          name="OrderID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[ContactPersonID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[ContactPersonID]"
+                          lineageId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[ContactPersonID]"
+                          name="ContactPersonID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[SalespersonPersonID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[SalespersonPersonID]"
+                          lineageId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[SalespersonPersonID]"
+                          name="SalespersonPersonID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[CustomerPurchaseOrderNumber]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[CustomerPurchaseOrderNumber]"
+                          length="20"
+                          lineageId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[CustomerPurchaseOrderNumber]"
+                          name="CustomerPurchaseOrderNumber"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[Comments]"
+                          dataType="nText"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[Comments]"
+                          lineageId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[Comments]"
+                          name="Comments"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[DeliveryInstructions]"
+                          dataType="nText"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[DeliveryInstructions]"
+                          lineageId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[DeliveryInstructions]"
+                          name="DeliveryInstructions"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[InternalComments]"
+                          dataType="nText"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[InternalComments]"
+                          lineageId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[InternalComments]"
+                          name="InternalComments"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[LastEditedBy]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[LastEditedBy]"
+                          lineageId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[LastEditedBy]"
+                          name="LastEditedBy"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[LastEditedWhen]"
+                          dataType="dbTimeStamp2"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[LastEditedWhen]"
+                          lineageId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[LastEditedWhen]"
+                          name="LastEditedWhen"
+                          scale="7"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[PickedByPersonID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[PickedByPersonID]"
+                          lineageId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[PickedByPersonID]"
+                          name="PickedByPersonID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[BackorderOrderID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[BackorderOrderID]"
+                          lineageId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[BackorderOrderID]"
+                          name="BackorderOrderID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[OrderDate]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[OrderDate]"
+                          lineageId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[OrderDate]"
+                          name="OrderDate"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[ExpectedDeliveryDate]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[ExpectedDeliveryDate]"
+                          lineageId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[ExpectedDeliveryDate]"
+                          name="ExpectedDeliveryDate"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[IsUndersupplyBackordered]"
+                          dataType="bool"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[IsUndersupplyBackordered]"
+                          lineageId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[IsUndersupplyBackordered]"
+                          name="IsUndersupplyBackordered"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[PickingCompletedWhen]"
+                          dataType="dbTimeStamp2"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[PickingCompletedWhen]"
+                          lineageId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].Columns[PickingCompletedWhen]"
+                          name="PickingCompletedWhen"
+                          scale="7"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[CustomerID]"
+                          dataType="i4"
+                          name="CustomerID" />
+                        <externalMetadataColumn
+                          refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[OrderID]"
+                          dataType="i4"
+                          name="OrderID" />
+                        <externalMetadataColumn
+                          refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[ContactPersonID]"
+                          dataType="i4"
+                          name="ContactPersonID" />
+                        <externalMetadataColumn
+                          refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[SalespersonPersonID]"
+                          dataType="i4"
+                          name="SalespersonPersonID" />
+                        <externalMetadataColumn
+                          refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[CustomerPurchaseOrderNumber]"
+                          dataType="wstr"
+                          length="20"
+                          name="CustomerPurchaseOrderNumber" />
+                        <externalMetadataColumn
+                          refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[Comments]"
+                          dataType="nText"
+                          name="Comments" />
+                        <externalMetadataColumn
+                          refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[DeliveryInstructions]"
+                          dataType="nText"
+                          name="DeliveryInstructions" />
+                        <externalMetadataColumn
+                          refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[InternalComments]"
+                          dataType="nText"
+                          name="InternalComments" />
+                        <externalMetadataColumn
+                          refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[LastEditedBy]"
+                          dataType="i4"
+                          name="LastEditedBy" />
+                        <externalMetadataColumn
+                          refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[LastEditedWhen]"
+                          dataType="dbTimeStamp2"
+                          name="LastEditedWhen"
+                          scale="7" />
+                        <externalMetadataColumn
+                          refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[PickedByPersonID]"
+                          dataType="i4"
+                          name="PickedByPersonID" />
+                        <externalMetadataColumn
+                          refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[BackorderOrderID]"
+                          dataType="i4"
+                          name="BackorderOrderID" />
+                        <externalMetadataColumn
+                          refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[OrderDate]"
+                          dataType="dbDate"
+                          name="OrderDate" />
+                        <externalMetadataColumn
+                          refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[ExpectedDeliveryDate]"
+                          dataType="dbDate"
+                          name="ExpectedDeliveryDate" />
+                        <externalMetadataColumn
+                          refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[IsUndersupplyBackordered]"
+                          dataType="bool"
+                          name="IsUndersupplyBackordered" />
+                        <externalMetadataColumn
+                          refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output].ExternalColumns[PickingCompletedWhen]"
+                          dataType="dbTimeStamp2"
+                          name="PickingCompletedWhen"
+                          scale="7" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[CustomerID]"
+                          dataType="i4"
+                          lineageId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[CustomerID]"
+                          name="CustomerID" />
+                        <outputColumn
+                          refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[OrderID]"
+                          dataType="i4"
+                          lineageId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[OrderID]"
+                          name="OrderID" />
+                        <outputColumn
+                          refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[ContactPersonID]"
+                          dataType="i4"
+                          lineageId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[ContactPersonID]"
+                          name="ContactPersonID" />
+                        <outputColumn
+                          refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[PickedByPersonID]"
+                          dataType="i4"
+                          lineageId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[PickedByPersonID]"
+                          name="PickedByPersonID" />
+                        <outputColumn
+                          refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[SalespersonPersonID]"
+                          dataType="i4"
+                          lineageId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[SalespersonPersonID]"
+                          name="SalespersonPersonID" />
+                        <outputColumn
+                          refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[BackorderOrderID]"
+                          dataType="i4"
+                          lineageId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[BackorderOrderID]"
+                          name="BackorderOrderID" />
+                        <outputColumn
+                          refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[OrderDate]"
+                          dataType="dbDate"
+                          lineageId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[OrderDate]"
+                          name="OrderDate" />
+                        <outputColumn
+                          refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[ExpectedDeliveryDate]"
+                          dataType="dbDate"
+                          lineageId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[ExpectedDeliveryDate]"
+                          name="ExpectedDeliveryDate" />
+                        <outputColumn
+                          refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[CustomerPurchaseOrderNumber]"
+                          dataType="wstr"
+                          length="20"
+                          lineageId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[CustomerPurchaseOrderNumber]"
+                          name="CustomerPurchaseOrderNumber" />
+                        <outputColumn
+                          refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[IsUndersupplyBackordered]"
+                          dataType="bool"
+                          lineageId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[IsUndersupplyBackordered]"
+                          name="IsUndersupplyBackordered" />
+                        <outputColumn
+                          refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[Comments]"
+                          dataType="nText"
+                          lineageId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[Comments]"
+                          name="Comments" />
+                        <outputColumn
+                          refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[DeliveryInstructions]"
+                          dataType="nText"
+                          lineageId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[DeliveryInstructions]"
+                          name="DeliveryInstructions" />
+                        <outputColumn
+                          refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[InternalComments]"
+                          dataType="nText"
+                          lineageId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[InternalComments]"
+                          name="InternalComments" />
+                        <outputColumn
+                          refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[PickingCompletedWhen]"
+                          dataType="dbTimeStamp2"
+                          lineageId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[PickingCompletedWhen]"
+                          name="PickingCompletedWhen"
+                          scale="7" />
+                        <outputColumn
+                          refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[LastEditedBy]"
+                          dataType="i4"
+                          lineageId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[LastEditedBy]"
+                          name="LastEditedBy" />
+                        <outputColumn
+                          refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[LastEditedWhen]"
+                          dataType="dbTimeStamp2"
+                          lineageId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[LastEditedWhen]"
+                          name="LastEditedWhen"
+                          scale="7" />
+                        <outputColumn
+                          refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\SQC_ETL\DF_Invoices.Paths[OLE DB Source Output]"
+                  endId="Package\SQC_ETL\DF_Invoices\RC_Source.Inputs[Row Count Input 1]"
+                  name="OLE DB Source Output"
+                  startId="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data.Outputs[OLE DB Source Output]" />
+                <path
+                  refId="Package\SQC_ETL\DF_Invoices.Paths[Row Count Output 1]"
+                  endId="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data.Inputs[OLE DB Destination Input]"
+                  name="Row Count Output 1"
+                  startId="Package\SQC_ETL\DF_Invoices\RC_Source.Outputs[Row Count Output 1]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SQC_ETL\SQL_TruncateDestination"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{5C884D88-6006-4B48-9AD8-D5700BA2835E}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:FailParentOnFailure="True"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQL_TruncateDestination"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{567E2783-0805-45C3-BD09-CE9148326EA9}"
+              SQLTask:SqlStmtSourceType="Variable"
+              SQLTask:SqlStatementSource="User::SQLTruncateDestTable" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SQC_ETL.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{6F14FD86-59B5-4781-B0C5-996558543E16}"
+          DTS:From="Package\SQC_ETL\SQL_TruncateDestination"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\SQC_ETL\DF_Invoices" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL_LogExecutionEnd"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{5C884D88-6006-4B48-9AD8-D5700BA2835E}"
+      DTS:DTSID="{ab54e480-da9d-43f3-8a6a-82075b19bf09}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="SQL_TruncateDestination"
+      DTS:ObjectName="SQL_LogExecutionEnd"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{AA1D331D-C84D-4654-B459-3C103EA866B5}"
+          SQLTask:SqlStatementSource="UPDATE [dbo].[ExecutionLog]&#xA;   SET &#xA;       [SourceRows] = ?&#xA;      ,[DestinationRows] = ?&#xA;      ,[DestinationRowsInsert] = ?&#xA;      ,[DestinationRowsUpdate] = ?&#xA;      ,[DestinationRowsDelete] = ?&#xA;      ,[ExecutionEnd] = getdate()&#xA;      ,[Result] = ?&#xA; WHERE ID = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::RC_DestinationRows"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::RC_DestinationRowsInsert"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="3"
+            SQLTask:DtsVariableName="User::RC_DestinationRowsUpdate"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="4"
+            SQLTask:DtsVariableName="User::RC_DestinationRowsDelete"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="5"
+            SQLTask:DtsVariableName="User::ExecutionStatus"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="6"
+            SQLTask:DtsVariableName="User::ETLFrameworkExecutionID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::RC_SourceTable"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL_LogExecutionStart"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{DB94A720-39D2-40F3-BA3A-A8FB40B80543}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL_LogExecutionStart"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{567E2783-0805-45C3-BD09-CE9148326EA9}"
-          SQLTask:SqlStmtSourceType="Variable"
-          SQLTask:SqlStatementSource="User::SQLTruncateDestTable" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:Connection="{AA1D331D-C84D-4654-B459-3C103EA866B5}"
+          SQLTask:SqlStatementSource="INSERT INTO [dbo].[ExecutionLog]&#xA;           (&#xA;&#x9;&#x9;&#x9;[PackageName]&#xA;           ,[SourceTableName]&#xA;           ,[DestinationTableName]&#xA;           ,[ExexutionStart]&#xA;           )&#xA;&#x9; &#xA;&#x9; OUTPUT INSERTED.ID&#xA;     VALUES&#xA;           (&#xA;&#x9;?&#xA;           ,&#x9;?&#xA;           ,    ?&#xA;           ,GETDATE()&#xA;&#x9;&#x9;   )&#xA;"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="ID"
+            SQLTask:DtsVariableName="User::ETLFrameworkExecutionID" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="System::PackageName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::SourceTableFullName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::DestTableFullName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -777,11 +1057,42 @@ FROM            Sales.Invoices</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{6F14FD86-59B5-4781-B0C5-996558543E16}"
-      DTS:From="Package\SQL_TruncateDestination"
+      DTS:DTSID="{3DE3C678-AAC3-49BE-AF09-BCF82C335B68}"
+      DTS:From="Package\SQC_ETL"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
-      DTS:To="Package\DF_Invoices" />
+      DTS:To="Package\EXP_SetStatusSuccess" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{BC242AF9-9FD5-4C4E-92F9-487E4E3D5518}"
+      DTS:From="Package\SQL_LogExecutionStart"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\SQC_ETL" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{31AC7BB9-9162-4B82-A3CA-D7208771D450}"
+      DTS:From="Package\SQC_ETL"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\EXP_SetStatusFailure"
+      DTS:Value="1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{90D01FDD-CD4E-49B4-A7D8-FFE53E45778C}"
+      DTS:From="Package\EXP_SetStatusSuccess"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\SQL_LogExecutionEnd" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{27D06C32-3131-46B5-8015-75BAC1C888C9}"
+      DTS:From="Package\EXP_SetStatusFailure"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\SQL_LogExecutionEnd" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -794,29 +1105,224 @@ FROM            Sales.Invoices</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="189,42"
+          Id="Package\SQL_LogExecutionStart"
+          TopLeft="55,130" />
         <NodeLayout
           Size="136,42"
-          Id="Package\DF_Invoices"
-          TopLeft="281.388888888889,133.611111111111" />
-        <NodeLayout
-          Size="198,42"
-          Id="Package\SQL_TruncateDestination"
-          TopLeft="254,42" />
+          Id="Package\SQC_ETL\DF_Invoices"
+          TopLeft="98.388888888889,121.611111111111" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="351.194444444444,84">
+          Id="Package\SQC_ETL.PrecedenceConstraints[Constraint]"
+          TopLeft="167.694444444445,71">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,49.6111111111111"
+              EndConnector="0,50.611111111111"
               Start="0,0"
-              End="0,42.1111111111111">
+              End="0,43.111111111111">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,42.1111111111111" />
+                    End="0,43.111111111111" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="198,42"
+          Id="Package\SQC_ETL\SQL_TruncateDestination"
+          TopLeft="70,29" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="339,219"
+          Size="339,262"
+          Id="Package\SQC_ETL"
+          TopLeft="226,259" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="149.5,172">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="163.25,87"
+              Start="0,0"
+              End="163.25,79.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.5473170731707" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,53.5473170731707"
+                    Point2="0,57.5473170731707"
+                    Point3="4,57.5473170731707" />
+                  <mssgle:LineSegment
+                    End="159.25,57.5473170731707" />
+                  <mssgle:CubicBezierSegment
+                    Point1="159.25,57.5473170731707"
+                    Point2="163.25,57.5473170731707"
+                    Point3="163.25,61.5473170731707" />
+                  <mssgle:LineSegment
+                    End="163.25,79.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="184,42"
+          Id="Package\SQL_LogExecutionEnd"
+          TopLeft="533,49" />
+        <NodeLayout
+          Size="184,42"
+          Id="Package\EXP_SetStatusSuccess"
+          TopLeft="414,130" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="395.5,259">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="110.5,-87"
+              Start="0,0"
+              End="110.5,-79.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-39.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-39.5"
+                    Point2="0,-43.5"
+                    Point3="4,-43.5" />
+                  <mssgle:LineSegment
+                    End="106.5,-43.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="106.5,-43.5"
+                    Point2="110.5,-43.5"
+                    Point3="110.5,-47.5" />
+                  <mssgle:LineSegment
+                    End="110.5,-79.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="179,42"
+          Id="Package\EXP_SetStatusFailure"
+          TopLeft="630,133" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="478.25,259">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="241.25,-84"
+              Start="0,0"
+              End="241.25,-76.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-24.4370731707317" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-24.4370731707317"
+                    Point2="0,-28.4370731707317"
+                    Point3="4,-28.4370731707317" />
+                  <mssgle:LineSegment
+                    End="237.25,-28.4370731707317" />
+                  <mssgle:CubicBezierSegment
+                    Point1="237.25,-28.4370731707317"
+                    Point2="241.25,-28.4370731707317"
+                    Point3="241.25,-32.4370731707317" />
+                  <mssgle:LineSegment
+                    End="241.25,-76.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="105.38365234375,-23.4370731707317,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="506,130">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="89.6666666666666,-39"
+              Start="0,0"
+              End="89.6666666666666,-31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-19.198275862069" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-19.198275862069"
+                    Point2="0,-23.198275862069"
+                    Point3="4,-23.198275862069" />
+                  <mssgle:LineSegment
+                    End="85.6666666666666,-23.198275862069" />
+                  <mssgle:CubicBezierSegment
+                    Point1="85.6666666666666,-23.198275862069"
+                    Point2="89.6666666666666,-23.198275862069"
+                    Point3="89.6666666666666,-27.198275862069" />
+                  <mssgle:LineSegment
+                    End="89.6666666666666,-31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="719.5,133">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-65.1666666666666,-42"
+              Start="0,0"
+              End="-65.1666666666666,-34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-20.9827586206897" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-20.9827586206897"
+                    Point2="0,-24.9827586206897"
+                    Point3="-4,-24.9827586206897" />
+                  <mssgle:LineSegment
+                    End="-61.1666666666666,-24.9827586206897" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-61.1666666666666,-24.9827586206897"
+                    Point2="-65.1666666666666,-24.9827586206897"
+                    Point3="-65.1666666666666,-28.9827586206897" />
+                  <mssgle:LineSegment
+                    End="-65.1666666666666,-34.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -829,32 +1335,58 @@ FROM            Sales.Invoices</property>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\DF_Invoices">
+    design-time-name="Package\SQC_ETL\DF_Invoices">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="150,42"
-          Id="Package\DF_Invoices\SRC_SQL_Data"
-          TopLeft="265.5,30.5" />
+          Id="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data"
+          TopLeft="263.5,26.5" />
         <NodeLayout
           Size="176,42"
-          Id="Package\DF_Invoices\DST_SQL_STG_Data"
-          TopLeft="248,148" />
+          Id="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data"
+          TopLeft="254,195" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\SQC_ETL\DF_Invoices\RC_Source"
+          TopLeft="272,111" />
         <EdgeLayout
-          Id="Package\DF_Invoices.Paths[OLE DB Source Output]"
-          TopLeft="338.25,72.5">
+          Id="Package\SQC_ETL\DF_Invoices.Paths[OLE DB Source Output]"
+          TopLeft="337.75,68.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,75.5"
+              EndConnector="0,42.5"
               Start="0,0"
-              End="0,68">
+              End="0,35">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,68" />
+                    End="0,35" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SQC_ETL\DF_Invoices.Paths[Row Count Output 1]"
+          TopLeft="339.5,153">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42"
+              Start="0,0"
+              End="0,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -867,7 +1399,7 @@ FROM            Sales.Invoices</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\DF_Invoices\DST_SQL_STG_Data">
+    design-time-name="Package\SQC_ETL\DF_Invoices\DST_SQL_STG_Data">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -880,7 +1412,7 @@ FROM            Sales.Invoices</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DF_Invoices\SRC_SQL_Data">
+    design-time-name="Package\SQC_ETL\DF_Invoices\SRC_SQL_Data">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

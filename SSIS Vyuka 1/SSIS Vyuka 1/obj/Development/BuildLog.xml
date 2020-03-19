@@ -2,13 +2,13 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>SSIS Vyuka 1</Name>
-    <LastWriteTime>2020-02-27T09:11:48.3910666Z</LastWriteTime>
+    <LastWriteTime>2020-03-05T09:17:29.7085179Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>STG_Invoices.dtsx</Name>
-      <LastWriteTime>2020-02-27T08:40:57.8368815Z</LastWriteTime>
+      <LastWriteTime>2020-03-05T08:47:24.4824886Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -18,7 +18,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>STG_Orders.dtsx</Name>
-      <LastWriteTime>2020-02-27T08:52:17.448609Z</LastWriteTime>
+      <LastWriteTime>2020-03-05T09:24:39.5289385Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -28,7 +28,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DW_Orders.dtsx</Name>
-      <LastWriteTime>2020-02-27T09:23:53.8011886Z</LastWriteTime>
+      <LastWriteTime>2020-03-05T08:47:24.4944812Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

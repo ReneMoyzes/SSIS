@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">X230</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAANJMTs9bdO02kSIVXcB64WgAAAAACAAAAAAAQZgAAAAEAACAAAADtbHFxQOPHqLmvtZX8hW6Xd8nP+5RzTBmGl/E3wWiwSAAAAAAOgAAAAAIAACAAAAB/ov15sM/x7RJ8/Uj3JM3Kb+wzV9Jw3PEu1pOLLgXhu5AAAAD4KMTCThKyokmBAcJs+GSNutyZnBDOmu9Nl8wHVu3CNvE2a+ykz4qLFr8nrGq5IO4ZIowJe42KRx6ie1XbW7uGEhQryg6WMyeWhtUZeQrFHt98IKIsgKrM7h8y9ldJ42TscT68jnLlrC76PSzo+jIb0zNI37clvvfGrs3oEYWeNjgXHQdgZs8FSYiOGk5GNjJAAAAAofmof1H2iPFXYRdKJ/TB5zAGrnSnM4yOEg/KyTz37lSMAXSjJFU4YAJ5z4lnD5PcBwphWpwA6uzjT4z1b36F7g==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAANJMTs9bdO02kSIVXcB64WgAAAAACAAAAAAAQZgAAAAEAACAAAAA9l5S3HuSwyuWr9+KyC1NGfRnPwjtytjyAoiwJI0NyFAAAAAAOgAAAAAIAACAAAABEtaronhCkmsctbiQQ2UcAmFLONa/x3jYfsEZkZkenRZAAAADjbFJxYGn2Wt43AV7WO5oNVtfSgp019YVvQmyeIK7jPAwxFmp2jZiveTkvI8ccGwKUA1uhRhzytK8mFXwK6isfBCs0Xl+aF10s3wTifrvZld7coO93KZfWRwEryU/EhLu6nZHKGQX9Msl3pMpEbxhNjNLE65H7WA9REZv1pYJktG2xraL4+Cm3USM5x4HOaVhAAAAAIcsyGJsTcu7BXDYkphky+aeWqjdMxDU/joEgUQe9433WFRg0uDRmMGrzeg91z8tTNI87N0OKZUdqUkMiUNABgA==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -39,6 +39,7 @@
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="SQL_WWIDWH.conmgr" />
           <SSIS:ConnectionManager SSIS:Name="SQL_WWIOLTP.conmgr" />
+          <SSIS:ConnectionManager SSIS:Name="SQL_ETLFramework.conmgr" />
         </SSIS:ConnectionManagers>
         <SSIS:DeploymentInfo>
           <SSIS:ProjectConnectionParameters>
@@ -54,21 +55,6 @@
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Value">Data Source=X230\SQLSRV2017;Initial Catalog=WWI;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</SSIS:Property>
-                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
-              </SSIS:Properties>
-            </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.SQL_WWIDWH.InitialCatalog">
-              <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="CreationName">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="Description">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">WWI</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -101,21 +87,6 @@
                 <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.SQL_WWIDWH.ServerName">
-              <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="CreationName">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="Description">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">X230\SQLSRV2017</SSIS:Property>
-                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
-              </SSIS:Properties>
-            </SSIS:Parameter>
             <SSIS:Parameter SSIS:Name="CM.SQL_WWIDWH.UserName">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
@@ -142,21 +113,6 @@
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Value">Data Source=X230\SQLSRV2017;Initial Catalog=WideWorldImporters;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</SSIS:Property>
-                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
-              </SSIS:Properties>
-            </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.SQL_WWIOLTP.InitialCatalog">
-              <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="CreationName">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="Description">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">WideWorldImporters</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -189,7 +145,7 @@
                 <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.SQL_WWIOLTP.ServerName">
+            <SSIS:Parameter SSIS:Name="CM.SQL_WWIOLTP.UserName">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -200,11 +156,54 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">X230\SQLSRV2017</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.SQL_WWIOLTP.UserName">
+            <SSIS:Parameter SSIS:Name="CM.SQL_ETLFramework.ConnectionString">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">Data Source=X230\SQLSRV2017;Initial Catalog=ETLFramework;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.SQL_ETLFramework.Password">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.SQL_ETLFramework.RetainSameConnection">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.SQL_ETLFramework.UserName">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -226,10 +225,10 @@
                 <SSIS:Property SSIS:Name="Name">STG_Invoices</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">9</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">10</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{028F19EA-AE63-4D5C-9F6B-00D7098007FB}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{85BC619C-684E-461F-933A-58AD4A51FDAA}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -300,10 +299,10 @@
                 <SSIS:Property SSIS:Name="Name">STG_Orders</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">13</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">23</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{3C4ACA1D-84C1-447A-A921-F8C12CEE326C}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{93D0D719-C7F1-4659-945A-33AF5567391E}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -336,6 +335,34 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="SourceTableName">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">{16C3E1C0-8794-4FED-AF52-9763C956B236}</SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">Orders</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="SourceTableSchema">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">{EE21AE45-0809-4664-8498-FF0BB24F1CE5}</SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">Sales</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
                 <SSIS:Parameter SSIS:Name="SrcSQLSelect">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">{539F1D70-C875-41C9-A1AF-6947A97B6679}</SSIS:Property>
@@ -345,7 +372,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">SELECT [OrderID]       ,[CustomerID]       ,[SalespersonPersonID]       ,[PickedByPersonID]       ,[ContactPersonID]       ,[BackorderOrderID]       ,[OrderDate]       ,[ExpectedDeliveryDate]       ,[CustomerPurchaseOrderNumber]       ,[IsUndersupplyBackordered]       ,[Comments]       ,[DeliveryInstructions]       ,[InternalComments]       ,[PickingCompletedWhen]       ,[LastEditedBy]       ,[LastEditedWhen]   FROM [Sales].[Orders]</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">SELECT ,,, [OrderID]       ,[CustomerID]       ,[SalespersonPersonID]       ,[PickedByPersonID]       ,[ContactPersonID]       ,[BackorderOrderID]       ,[OrderDate]       ,[ExpectedDeliveryDate]       ,[CustomerPurchaseOrderNumber]       ,[IsUndersupplyBackordered]       ,[Comments]       ,[DeliveryInstructions]       ,[InternalComments]       ,[PickingCompletedWhen]       ,[LastEditedBy]       ,[LastEditedWhen]   FROM [Sales].[Orders]</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -357,10 +384,10 @@
                 <SSIS:Property SSIS:Name="Name">CTR_Stage</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">6</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">7</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{E5F9F050-76BD-45FA-88A6-A51B4B81DBC0}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{EE52AE7A-598A-4C0E-981C-54E460C88854}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -403,16 +430,32 @@
                 <SSIS:Property SSIS:Name="Name">DW_Orders</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">4</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{B9D3D008-2B9C-419F-BC97-FE54411D20A5}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{3919F131-04E3-4597-8AE6-E3D8301E90F6}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
                 <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
               </SSIS:Properties>
-              <SSIS:Parameters />
+              <SSIS:Parameters>
+                <SSIS:Parameter SSIS:Name="SourceTableName">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">{D89DAE69-9AB4-4F3A-9913-AAD46AFFC1D7}</SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+              </SSIS:Parameters>
             </SSIS:PackageMetaData>
           </SSIS:PackageInfo>
         </SSIS:DeploymentInfo>

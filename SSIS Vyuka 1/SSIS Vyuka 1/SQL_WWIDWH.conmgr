@@ -3,6 +3,10 @@
   DTS:ObjectName="SQL_WWIDWH"
   DTS:DTSID="{567E2783-0805-45C3-BD09-CE9148326EA9}"
   DTS:CreationName="OLEDB">
+  <DTS:PropertyExpression
+    DTS:Name="InitialCatalog">@[$Project::SQL_WWIDWH_InitialCatalog]</DTS:PropertyExpression>
+  <DTS:PropertyExpression
+    DTS:Name="ServerName">@[$Project::SQL_WWIDWH_ServerName]</DTS:PropertyExpression>
   <DTS:ObjectData>
     <DTS:ConnectionManager
       DTS:ConnectionString="Data Source=X230\SQLSRV2017;Initial Catalog=WWI;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />

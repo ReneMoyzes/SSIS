@@ -3,6 +3,10 @@
   DTS:ObjectName="SQL_WWIOLTP"
   DTS:DTSID="{D0ED5ED5-C630-4BEB-853D-C2E221FDD77F}"
   DTS:CreationName="OLEDB">
+  <DTS:PropertyExpression
+    DTS:Name="InitialCatalog">@[$Project::SQL_WWIOLTP_InitialCatalog]</DTS:PropertyExpression>
+  <DTS:PropertyExpression
+    DTS:Name="ServerName">@[$Project::SQL_WWIOLTP_ServerName]</DTS:PropertyExpression>
   <DTS:ObjectData>
     <DTS:ConnectionManager
       DTS:ConnectionString="Data Source=X230\SQLSRV2017;Initial Catalog=WideWorldImporters;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
