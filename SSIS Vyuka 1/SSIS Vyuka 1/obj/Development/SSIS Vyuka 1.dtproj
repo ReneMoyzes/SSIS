@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">X230</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAANJMTs9bdO02kSIVXcB64WgAAAAACAAAAAAAQZgAAAAEAACAAAAAdOFd8bd6OE7Vd5ZjrquxI+Y7Y7ZRAz/QwO9LXbTnOgAAAAAAOgAAAAAIAACAAAACUrCyBl4ulYn3MKHat7jOE6G/0gPog8XK5mcCNTMMmBJAAAAB9jG9PE/L/MpQA/PbKeklOA04y+az9pJgDGUM67/nlaJoBAPyUZy2zZxog2SIxVOXPrInFNN07EFOGNnd1xaY8FP34ZfUoWZhGmrTCr9boAJW+W8S+Y5/7XJmQ1h+ocU4Lz8BzwoC6EdENmjt42fqDwOEosQstKt7MmzGtnd3Q8NMfkyJ/TEsqEdCXgLIPOAxAAAAAuy39uk90oilc9cAALvZ0MGS48sOem2r9iJ7sby9Mi36+ll+Kx/KDW6Zy3yTdiBaRFzkgQyf7qJ3isk+Hj7jUYg==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAANJMTs9bdO02kSIVXcB64WgAAAAACAAAAAAAQZgAAAAEAACAAAAAxYi32R7mYm1n5DN2R7zWsxB5mhhNJvvtyKQ9GF4EL0gAAAAAOgAAAAAIAACAAAACs7BqYgSNbaoJsHqvllSM+ZXabcd44aUQ/FKvwfmc8u5AAAADscrepGPQtT7iZSPWGOMcAdJyZqmiQeZC5Mia03YQAf5vTxpyy2z3EAuNvqw3P0GmiAbDJO8BOey+BxFARzrtkW49woICLMgpztaVqr7h324Xikv8Ko9AimhHf373P2pBODdqya4sR+kIC9F+m/b1gmXGaAzCnp+FCsPQ55JSuBZq6fodhC0xwklbNYOUn/UVAAAAAohkZ7ZchnMZjHx2ZdyQWy1lSiPTw9lWzUbO+OHGLBhpO7VSvxB6z4bKQuv/pVYKjM0SyoR36KFe/sXQY88g/YQ==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -299,10 +299,10 @@
                 <SSIS:Property SSIS:Name="Name">STG_Orders</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">27</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">30</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{FBFEE116-9CA1-40F4-8BDE-3ABFAEF45E2D}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{C27C1BF8-E735-4947-AE76-2BBB3909396A}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -372,7 +372,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">SELECT ,,, [OrderID]       ,[CustomerID]       ,[SalespersonPersonID]       ,[PickedByPersonID]       ,[ContactPersonID]       ,[BackorderOrderID]       ,[OrderDate]       ,[ExpectedDeliveryDate]       ,[CustomerPurchaseOrderNumber]       ,[IsUndersupplyBackordered]       ,[Comments]       ,[DeliveryInstructions]       ,[InternalComments]       ,[PickingCompletedWhen]       ,[LastEditedBy]       ,[LastEditedWhen]   FROM [Sales].[Orders]</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">SELECT TOP 10  [OrderID]       ,[CustomerID]       ,[SalespersonPersonID]       ,[PickedByPersonID]       ,[ContactPersonID]       ,[BackorderOrderID]       ,[OrderDate]       ,[ExpectedDeliveryDate]       ,[CustomerPurchaseOrderNumber]       ,[IsUndersupplyBackordered]       ,[Comments]       ,[DeliveryInstructions]       ,[InternalComments]       ,[PickingCompletedWhen]       ,[LastEditedBy]       ,[LastEditedWhen]   FROM [Sales].[Orders]</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>

@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>SSIS Vyuka 1</Name>
-    <LastWriteTime>2020-03-05T09:17:29.7085179Z</LastWriteTime>
+    <LastWriteTime>2020-03-19T09:24:42.2716335Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -18,7 +18,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>STG_Orders.dtsx</Name>
-      <LastWriteTime>2020-03-05T09:24:39.5289385Z</LastWriteTime>
+      <LastWriteTime>2020-03-19T09:24:42.1375936Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
