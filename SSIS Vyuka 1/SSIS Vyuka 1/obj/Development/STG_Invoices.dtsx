@@ -11,8 +11,8 @@
   DTS:LocaleID="1029"
   DTS:ObjectName="STG_Invoices"
   DTS:PackageType="5"
-  DTS:VersionBuild="10"
-  DTS:VersionGUID="{85BC619C-684E-461F-933A-58AD4A51FDAA}">
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{685D6373-4537-43CB-92BB-9E0EB8ACF5C8}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
