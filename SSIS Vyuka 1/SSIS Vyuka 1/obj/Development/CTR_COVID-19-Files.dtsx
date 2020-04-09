@@ -11,8 +11,8 @@
   DTS:LocaleID="1029"
   DTS:ObjectName="CTR_COVID-19-Files"
   DTS:PackageType="5"
-  DTS:VersionBuild="49"
-  DTS:VersionGUID="{C191AF3A-0641-490B-ACA0-12028937C293}">
+  DTS:VersionBuild="54"
+  DTS:VersionGUID="{603694CC-05E6-42B8-BBD3-D7D51845AF8F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -234,7 +234,7 @@
       DTS:ExecutableType="Microsoft.ExpressionTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="EXP_SetStatusFailure"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExpressionTask
@@ -249,7 +249,7 @@
       DTS:ExecutableType="Microsoft.ExpressionTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="EXP_SetStatusSuccess"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExpressionTask
@@ -297,7 +297,7 @@
             <DTS:ObjectData>
               <ForEachFileEnumeratorProperties>
                 <FEFEProperty
-                  Folder="C:\Users\Rene.Moyzes\Documents\GitHub\COVID-19-test\dati-regioni" />
+                  Folder="C:\Users\Rene.Moyzes\Documents\GitHub\COVID-19\dati-regioni" />
                 <FEFEProperty
                   FileSpec="*.*" />
                 <FEFEProperty
@@ -322,7 +322,7 @@
               <DTS:ObjectData>
                 <ExecutePackageTask>
                   <UseProjectReference>True</UseProjectReference>
-                  <PackageName>CTR_COVID-19-FileToTable.dtsx</PackageName>
+                  <PackageName>STG_COVID-19-FileToTable.dtsx</PackageName>
                   <ParameterAssignment>
                     <ParameterName>SourceFilePath</ParameterName>
                     <BindedVariableOrParameterName>User::SourceFileName</BindedVariableOrParameterName>
@@ -338,8 +338,8 @@
           <DTS:ForEachVariableMappings>
             <DTS:ForEachVariableMapping
               DTS:CreationName=""
-              DTS:DTSID="{164C870E-2103-441F-BE53-DAC8E3A7A511}"
-              DTS:ObjectName="{164C870E-2103-441F-BE53-DAC8E3A7A511}"
+              DTS:DTSID="{678341B6-925F-41BA-B764-F9E032C68012}"
+              DTS:ObjectName="{678341B6-925F-41BA-B764-F9E032C68012}"
               DTS:ValueIndex="0"
               DTS:VariableName="User::SourceFileName" />
           </DTS:ForEachVariableMappings>
@@ -357,7 +357,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{567E2783-0805-45C3-BD09-CE9148326EA9}"
-              SQLTask:SqlStatementSource="TRUNCATE TABLE [DW].[DEST_COVID19ITA];&#xA;INSERT INTO [DW].[DEST_COVID19ITA]&#xA;           (&#xA;&#x9;&#x9;&#x9;[ID]&#xA;           ,[Datum]&#xA;           ,[Zeme]&#xA;           ,[RegionKod]&#xA;           ,[RegionPopis]&#xA;           ,[Hospitalizovano]&#xA;           ,[JIP]&#xA;           ,[HospitalizovanoCelkem]&#xA;           ,[Izolace]&#xA;           ,[AktualnePozitivni]&#xA;           ,[NovePozitivni]&#xA;           ,[Propuštění]&#xA;           ,[Zesnulí]&#xA;           ,[Celkem]&#xA;           ,[LoadDate]&#xA;           ,[SourceFile])&#xA;SELECT &#xA;&#x9;&#x9;  &#x9;[ID]&#xA;           ,[Datum]&#xA;           ,[Zeme]&#xA;           ,[RegionKod]&#xA;           ,[RegionPopis]&#xA;           ,[Hospitalizovano]&#xA;           ,[JIP]&#xA;           ,[HospitalizovanoCelkem]&#xA;           ,[Izolace]&#xA;           ,[AktualnePozitivni]&#xA;           ,[NovePozitivni]&#xA;           ,[Propuštění]&#xA;           ,[Zesnulí]&#xA;           ,[Celkem]&#xA;           ,[LoadDate]&#xA;           ,[SourceFile]&#xA;FROM [STG].[DEST_COVID19ITA];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="TRUNCATE TABLE [DW].[DEST_COVID19ITA];&#xA;INSERT INTO [DW].[DEST_COVID19ITA]&#xA;           (HASHID,&#xA;&#x9;&#x9;&#x9;[ID]&#xA;           ,[Datum]&#xA;           ,[Zeme]&#xA;           ,[RegionKod]&#xA;           ,[RegionPopis]&#xA;           ,[Hospitalizovano]&#xA;           ,[JIP]&#xA;           ,[HospitalizovanoCelkem]&#xA;           ,[Izolace]&#xA;           ,[AktualnePozitivni]&#xA;           ,[NovePozitivni]&#xA;           ,[Propuštění]&#xA;           ,[Zesnulí]&#xA;           ,[Celkem]&#xA;           ,[LoadDate]&#xA;           ,[SourceFile]&#xA;           ,HASHROW)&#xA;SELECT &#xA;HASHID,&#xA;&#x9;&#x9;  &#x9;[ID]&#xA;           ,[Datum]&#xA;           ,[Zeme]&#xA;           ,[RegionKod]&#xA;           ,[RegionPopis]&#xA;           ,[Hospitalizovano]&#xA;           ,[JIP]&#xA;           ,[HospitalizovanoCelkem]&#xA;           ,[Izolace]&#xA;           ,[AktualnePozitivni]&#xA;           ,[NovePozitivni]&#xA;           ,[Propuštění]&#xA;           ,[Zesnulí]&#xA;           ,[Celkem]&#xA;           ,[LoadDate]&#xA;           ,[SourceFile]&#xA;,HASHROW&#xA;FROM [STG].[DEST_COVID19ITA];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -578,14 +578,35 @@
   </resheader>
 </root>]]></ProjectItem>
                   <ProjectItem
-                    Name="Properties\Settings.settings"
-                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                    Name="Properties\AssemblyInfo.cs"
+                    Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_31dce66bdf384d6599d960f7d45fdbd7")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_31dce66bdf384d6599d960f7d45fdbd7")]
+[assembly: AssemblyCopyright("Copyright @  2020")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
                   <ProjectItem
                     Name="ScriptMain.cs"
                     Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
@@ -755,35 +776,14 @@ namespace ST_31dce66bdf384d6599d960f7d45fdbd7.Properties {
     }
 }]]></ProjectItem>
                   <ProjectItem
-                    Name="Properties\AssemblyInfo.cs"
-                    Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_31dce66bdf384d6599d960f7d45fdbd7")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_31dce66bdf384d6599d960f7d45fdbd7")]
-[assembly: AssemblyCopyright("Copyright @  2020")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                    Name="Properties\Settings.settings"
+                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Resources.Designer.cs"
                     Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -1253,40 +1253,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="240,148"
-          Size="240,191"
+          PanelSize="240,160"
+          Size="240,203"
           Id="Package\SQC_ETL\FLC_ForEachSourceFile"
           TopLeft="93,150" />
-        <NodeLayout
-          Size="198,42"
-          Id="Package\SQC_ETL\SQL_TruncateDestination"
-          TopLeft="111,38" />
-        <EdgeLayout
-          Id="Package\SQC_ETL.PrecedenceConstraints[Constraint 1]"
-          TopLeft="211.5,80">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,70"
-              Start="0,0"
-              End="0,62.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,62.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
           Size="146,42"
           Id="Package\SQC_ETL\SQL_STG2DW"
           TopLeft="133,385" />
+        <NodeLayout
+          Size="198,42"
+          Id="Package\SQC_ETL\SQL_TruncateDestination"
+          TopLeft="111,38" />
         <EdgeLayout
           Id="Package\SQC_ETL.PrecedenceConstraints[Constraint]"
           TopLeft="209,427">
@@ -1310,19 +1288,41 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\SQC_ETL.PrecedenceConstraints[Constraint 2]"
-          TopLeft="209.5,341">
+          Id="Package\SQC_ETL.PrecedenceConstraints[Constraint 1]"
+          TopLeft="211.5,80">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,44"
+              EndConnector="0,70"
               Start="0,0"
-              End="0,36.5">
+              End="0,62.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,36.5" />
+                    End="0,62.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SQC_ETL.PrecedenceConstraints[Constraint 2]"
+          TopLeft="209.5,353">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32"
+              Start="0,0"
+              End="0,24.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
