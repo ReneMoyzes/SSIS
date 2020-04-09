@@ -5,14 +5,14 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="X230"
   DTS:CreatorName="X230\Rene.Moyzes"
-  DTS:DTSID="{E8223BE1-7673-4A04-9094-8072D8F4501C}"
+  DTS:DTSID="{F3626385-8328-4EEA-88E0-D7521222FD23}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.1100.123"
   DTS:LocaleID="1029"
-  DTS:ObjectName="CTR_COVID-19-FileToTable"
+  DTS:ObjectName="STG_COVID-19-FileToTable"
   DTS:PackageType="5"
-  DTS:VersionBuild="85"
-  DTS:VersionGUID="{03EEED63-C2E7-4E5D-A1B7-B361291D31C5}">
+  DTS:VersionBuild="88"
+  DTS:VersionGUID="{D1BF7C25-675B-45AE-97DA-42EA495B2206}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -488,12 +488,12 @@
                       synchronousInputId="Package\SQC_ETL\DF_ReadFile\DER_Dates.Inputs[Derived Column Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\SQC_ETL\DF_ReadFile\DER_Dates.Outputs[Derived Column Output].Columns[Datum]"
+                          refId="Package\SQC_ETL\DF_ReadFile\DER_Dates.Outputs[Derived Column Output].Columns[KonvertovaneDatum]"
                           dataType="dbTimeStamp2"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
-                          lineageId="Package\SQC_ETL\DF_ReadFile\DER_Dates.Outputs[Derived Column Output].Columns[Datum]"
-                          name="Datum"
+                          lineageId="Package\SQC_ETL\DF_ReadFile\DER_Dates.Outputs[Derived Column Output].Columns[KonvertovaneDatum]"
+                          name="KonvertovaneDatum"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
@@ -765,11 +765,11 @@
                           externalMetadataColumnId="Package\SQC_ETL\DF_ReadFile\DEST_COVID19ITA.Inputs[OLE DB Destination Input].ExternalColumns[note_en]"
                           lineageId="Package\SQC_ETL\DF_ReadFile\FlatFileData.Outputs[Flat File Source Output].Columns[note_en]" />
                         <inputColumn
-                          refId="Package\SQC_ETL\DF_ReadFile\DEST_COVID19ITA.Inputs[OLE DB Destination Input].Columns[Datum]"
+                          refId="Package\SQC_ETL\DF_ReadFile\DEST_COVID19ITA.Inputs[OLE DB Destination Input].Columns[KonvertovaneDatum]"
                           cachedDataType="dbTimeStamp2"
-                          cachedName="Datum"
+                          cachedName="KonvertovaneDatum"
                           externalMetadataColumnId="Package\SQC_ETL\DF_ReadFile\DEST_COVID19ITA.Inputs[OLE DB Destination Input].ExternalColumns[Datum]"
-                          lineageId="Package\SQC_ETL\DF_ReadFile\DER_Dates.Outputs[Derived Column Output].Columns[Datum]" />
+                          lineageId="Package\SQC_ETL\DF_ReadFile\DER_Dates.Outputs[Derived Column Output].Columns[KonvertovaneDatum]" />
                         <inputColumn
                           refId="Package\SQC_ETL\DF_ReadFile\DEST_COVID19ITA.Inputs[OLE DB Destination Input].Columns[LoadDate]"
                           cachedDataType="dbTimeStamp"
@@ -3842,7 +3842,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="38.567421875,5,61.36515625,9.7490234375"
+              BoundingBox="29.69876953125,5,79.1024609375,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>

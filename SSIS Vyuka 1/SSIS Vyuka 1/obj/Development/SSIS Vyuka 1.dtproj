@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">X230</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAANJMTs9bdO02kSIVXcB64WgAAAAACAAAAAAAQZgAAAAEAACAAAAAkNSWSj6z4jf1TJ50ZgYuld0VsyIGPsDObWk8oNZfRMQAAAAAOgAAAAAIAACAAAAABfC0mkBrh4qrWEPKfJsHtYtBhQFfKIH9kSo/8dSruW5AAAACEHG/4iWr39YDu7lzsK0pgjcoNLrxtK3u3zkrhU/k1dCzqteXRWuBy6bK4UExO1wnonRKeejjLI+2VWh6ZjeEeISTNgnNyJskI+finOtAF24xlsKsdClO071S5Tc+fCuVm+W6J9QAzgDhgusTrr9+iwLgL8cplDgshp7l9pexz3eNQAmAfHsNTUma0NngrLQJAAAAA5C8Wt9qXzJRDBbLQcAwrIEeaF6ilWMdKKNwNZPFFFnRMwAsqHPc9qBSoGqzhfe6fL7BEHsWGHxw2Q8VAe7iSFQ==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAANJMTs9bdO02kSIVXcB64WgAAAAACAAAAAAAQZgAAAAEAACAAAACl4ejI6rQhDMzTKJ3EZUZf3PSGNuIZ65TB9SOW+cgT/gAAAAAOgAAAAAIAACAAAABXHnBV2RLOyPnml3v1CXB3JE72cQozKQxnJRnBzDya55AAAACVHa1e9xAgJ+PfugEZ3uoE7Faxxd0FnU6mSULF3RiEbSn8byLufTlygngilAPcijcEPl2i9HDdvH4e7d5i3hfyDk4LBluE6Cb2CzeX1kDbdC0z1bM6jU1NAp3cs2PsujT+ndG6C5x1Xyt8FW09AesKPg1l3uNbwaED+PIR4dYfijvJ3H+yboBhvJTZKK50xLtAAAAADegCeYHtvveIVlVk7II1Ka8TejezQb9/UtIqEckOEFnLgnqDP3iQTXuGPMe2zAW7NvrEG4CeQmu88R6ApqiXig==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -36,7 +36,7 @@
           <SSIS:Package SSIS:Name="CTR_Stage.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="DW_Orders.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="CTR_COVID-19-Files.dtsx" SSIS:EntryPoint="1" />
-          <SSIS:Package SSIS:Name="CTR_COVID-19-FileToTable.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="STG_COVID-19-FileToTable.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="SQL_WWIDWH.conmgr" />
@@ -491,10 +491,10 @@
                 <SSIS:Property SSIS:Name="Name">CTR_COVID-19-Files</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">44</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">49</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{6D7B6E8E-C633-43B6-B2EC-A8BD5F6D0938}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{C191AF3A-0641-490B-ACA0-12028937C293}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -597,16 +597,16 @@
                 </SSIS:Parameter>
               </SSIS:Parameters>
             </SSIS:PackageMetaData>
-            <SSIS:PackageMetaData SSIS:Name="CTR_COVID-19-FileToTable.dtsx">
+            <SSIS:PackageMetaData SSIS:Name="STG_COVID-19-FileToTable.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{E8223BE1-7673-4A04-9094-8072D8F4501C}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">CTR_COVID-19-FileToTable</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{F3626385-8328-4EEA-88E0-D7521222FD23}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">STG_COVID-19-FileToTable</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">50</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">88</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{9DF7EACD-4C6D-4B2A-9459-1F92DA0AC66A}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{D1BF7C25-675B-45AE-97DA-42EA495B2206}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
