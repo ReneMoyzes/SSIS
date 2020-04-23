@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>SSIS Vyuka 1</Name>
-    <LastWriteTime>2020-04-09T07:50:26.1655181Z</LastWriteTime>
+    <LastWriteTime>2020-04-16T08:32:32.2036611Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -33,12 +33,12 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>CTR_COVID-19-Files.dtsx</Name>
-      <LastWriteTime>2020-04-09T08:14:31.8509841Z</LastWriteTime>
+      <LastWriteTime>2020-04-16T08:18:07.0895483Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>STG_COVID-19-FileToTable.dtsx</Name>
-      <LastWriteTime>2020-04-09T08:12:25.7398117Z</LastWriteTime>
+      <LastWriteTime>2020-04-16T08:34:26.7897453Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -49,6 +49,16 @@
     <ProjectBuildItemInfo>
       <Name>STG_COVID-19-FileToTable TR.dtsx</Name>
       <LastWriteTime>2020-04-09T07:50:26.0649508Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>STG_COVID-19-FileToTable SQL.dtsx</Name>
+      <LastWriteTime>2020-04-16T08:14:27.8059351Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>STG_COVID-19-FileToTable NO SQL.dtsx</Name>
+      <LastWriteTime>2020-04-16T08:32:32.1187134Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

@@ -11,8 +11,8 @@
   DTS:LocaleID="1029"
   DTS:ObjectName="CTR_COVID-19-Files"
   DTS:PackageType="5"
-  DTS:VersionBuild="56"
-  DTS:VersionGUID="{2077F7A2-8856-4B3F-880F-16AC27D0BF3F}">
+  DTS:VersionBuild="61"
+  DTS:VersionGUID="{DB350ED3-BE8A-4C34-9B29-A32BDDD451EA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -125,6 +125,17 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
+      DTS:DTSID="{78D456DB-CD09-49DC-89DA-BF2141E8D7B3}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="!(RIGHT(@[User::SourceFileName],LEN(@[User::SourceFileName]))==&quot;dpc-covid19-ita-regioni.csv&quot;)"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="IsValidFileName">
+      <DTS:VariableValue
+        DTS:DataType="11">-1</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
       DTS:DTSID="{17FB1AC5-6AA3-4092-827F-2EA8B7924395}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
@@ -234,7 +245,7 @@
       DTS:ExecutableType="Microsoft.ExpressionTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="EXP_SetStatusFailure"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExpressionTask
@@ -249,7 +260,7 @@
       DTS:ExecutableType="Microsoft.ExpressionTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="EXP_SetStatusSuccess"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExpressionTask
@@ -275,7 +286,7 @@
           DTS:ExecutableType="Microsoft.ExpressionTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="EXP_ETLIsRunningToFalse"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <ExpressionTask
@@ -299,7 +310,7 @@
                 <FEFEProperty
                   Folder="C:\Users\Rene.Moyzes\Documents\GitHub\COVID-19\dati-regioni" />
                 <FEFEProperty
-                  FileSpec="*.*" />
+                  FileSpec="dpc-covid19-ita-regioni.csv" />
                 <FEFEProperty
                   FileNameRetrievalType="0" />
                 <FEFEProperty
@@ -338,70 +349,22 @@
           <DTS:ForEachVariableMappings>
             <DTS:ForEachVariableMapping
               DTS:CreationName=""
-              DTS:DTSID="{678341B6-925F-41BA-B764-F9E032C68012}"
-              DTS:ObjectName="{678341B6-925F-41BA-B764-F9E032C68012}"
+              DTS:DTSID="{1D9BFD97-6D5E-4BFD-AC90-B7CF80B09E1B}"
+              DTS:ObjectName="{1D9BFD97-6D5E-4BFD-AC90-B7CF80B09E1B}"
               DTS:ValueIndex="0"
               DTS:VariableName="User::SourceFileName" />
           </DTS:ForEachVariableMappings>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\SQC_ETL\SQL_STG2DW"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{95B628C2-312B-4460-B09B-49866CBF7961}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="SQL_STG2DW"
-          DTS:ThreadHint="1">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{567E2783-0805-45C3-BD09-CE9148326EA9}"
-              SQLTask:SqlStatementSource="DELETE FROM [DW].[DEST_COVID19ITA]&#xA;WHERE NOT EXISTS&#xA;(&#xA;&#x9;SELECT 1&#xA;&#x9;FROM STG.[DEST_COVID19ITA] F&#xA;&#x9;WHERE&#xA;&#x9;(&#xA;&#x9;F.HASHID = DW.[DEST_COVID19ITA].HASHID&#xA;&#x9;)&#xA;)&#xA;OR EXISTS&#xA;&#x9;(&#xA;&#x9;SELECT 1&#xA;&#x9;FROM STG.[DEST_COVID19ITA] F&#xA;&#x9;WHERE &#xA;&#x9;F.HASHID = DW.[DEST_COVID19ITA].HASHID&#xA;&#x9;AND&#xA;&#x9;F.HASHROW  &lt;&gt; DW.[DEST_COVID19ITA].HASHROW&#xA;&#x9;)&#xA;&#xA;&#xA;INSERT INTO [DW].[DEST_COVID19ITA]&#xA;           (&#xA;&#x9;&#x9;&#x9;[HASHID]&#xA;&#x9;&#x9;&#x9;,[ID]&#xA;           ,[Datum]&#xA;           ,[Zeme]&#xA;           ,[RegionKod]&#xA;           ,[RegionPopis]&#xA;           ,[Hospitalizovano]&#xA;           ,[JIP]&#xA;           ,[HospitalizovanoCelkem]&#xA;           ,[Izolace]&#xA;           ,[AktualnePozitivni]&#xA;           ,[NovePozitivni]&#xA;           ,[Propuštění]&#xA;           ,[Zesnulí]&#xA;           ,[Celkem]&#xA;           ,[LoadDate]&#xA;           ,[SourceFile]&#xA;&#x9;&#x9;   ,[HASHROW])&#xA;SELECT &#xA;&#x9;&#x9;  &#x9;[HASHID]&#xA;&#x9;&#x9;&#x9;,[ID]&#xA;           ,[Datum]&#xA;           ,[Zeme]&#xA;           ,[RegionKod]&#xA;           ,[RegionPopis]&#xA;           ,[Hospitalizovano]&#xA;           ,[JIP]&#xA;           ,[HospitalizovanoCelkem]&#xA;           ,[Izolace]&#xA;           ,[AktualnePozitivni]&#xA;           ,[NovePozitivni]&#xA;           ,[Propuštění]&#xA;           ,[Zesnulí]&#xA;           ,[Celkem]&#xA;           ,[LoadDate]&#xA;           ,[SourceFile]&#xA;&#x9;&#x9;   ,[HASHROW]&#xA;FROM [STG].[DEST_COVID19ITA] T&#xA;WHERE NOT EXISTS&#xA;(&#xA;&#x9;SELECT 1&#xA;&#x9;FROM DW.[DEST_COVID19ITA] F&#xA;&#x9;WHERE&#xA;&#x9;F.HASHID  = T.HASHID&#xA;);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\SQC_ETL\SQL_TruncateDestination"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{90d880ad-c9c4-49c4-b1b2-d3f081085f77}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="SQL_TruncateDestination"
-          DTS:ThreadHint="1">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{567E2783-0805-45C3-BD09-CE9148326EA9}"
-              SQLTask:SqlStatementSource="TRUNCATE TABLE STG.[DEST_COVID19ITA]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-          </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
       <DTS:PrecedenceConstraints>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\SQC_ETL.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{64B14BA4-AED8-4B90-B5DE-1F4EECEE2F9F}"
-          DTS:From="Package\SQC_ETL\SQL_STG2DW"
+          DTS:DTSID="{A3C1A8DE-7826-4988-AEC2-E7B03C620E2C}"
+          DTS:From="Package\SQC_ETL\FLC_ForEachSourceFile"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
           DTS:To="Package\SQC_ETL\EXP_ETLIsRunningToFalse" />
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package\SQC_ETL.PrecedenceConstraints[Constraint 1]"
-          DTS:CreationName=""
-          DTS:DTSID="{30F90913-1213-4CBE-AF75-7C36E8542859}"
-          DTS:From="Package\SQC_ETL\SQL_TruncateDestination"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint 1"
-          DTS:To="Package\SQC_ETL\FLC_ForEachSourceFile" />
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package\SQC_ETL.PrecedenceConstraints[Constraint 2]"
-          DTS:CreationName=""
-          DTS:DTSID="{2A634C74-381B-4570-801B-7F3F7D7A6032}"
-          DTS:From="Package\SQC_ETL\FLC_ForEachSourceFile"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint 2"
-          DTS:To="Package\SQC_ETL\SQL_STG2DW" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
     <DTS:Executable
@@ -434,7 +397,7 @@
               DTS:ExecutableType="Microsoft.ScriptTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="SCR_WaitForLogging"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="1">
               <DTS:Variables>
                 <DTS:Variable
                   DTS:CreationName=""
@@ -578,14 +541,35 @@
   </resheader>
 </root>]]></ProjectItem>
                   <ProjectItem
-                    Name="Properties\Settings.settings"
-                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                    Name="Properties\AssemblyInfo.cs"
+                    Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_31dce66bdf384d6599d960f7d45fdbd7")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_31dce66bdf384d6599d960f7d45fdbd7")]
+[assembly: AssemblyCopyright("Copyright @  2020")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
                   <ProjectItem
                     Name="ScriptMain.cs"
                     Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
@@ -755,35 +739,14 @@ namespace ST_31dce66bdf384d6599d960f7d45fdbd7.Properties {
     }
 }]]></ProjectItem>
                   <ProjectItem
-                    Name="Properties\AssemblyInfo.cs"
-                    Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_31dce66bdf384d6599d960f7d45fdbd7")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_31dce66bdf384d6599d960f7d45fdbd7")]
-[assembly: AssemblyCopyright("Copyright @  2020")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                    Name="Properties\Settings.settings"
+                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Resources.Designer.cs"
                     Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -981,7 +944,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="SQL_LogExecutionRunning"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="1">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -1249,80 +1212,28 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <NodeLayout
           Size="157,42"
           Id="Package\SQC_ETL\FLC_ForEachSourceFile\EXP_FileToTable"
-          TopLeft="37,40" />
+          TopLeft="50,49" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="240,160"
-          Size="240,203"
+          PanelSize="240,181"
+          Size="240,224"
           Id="Package\SQC_ETL\FLC_ForEachSourceFile"
           TopLeft="93,150" />
-        <NodeLayout
-          Size="146,42"
-          Id="Package\SQC_ETL\SQL_STG2DW"
-          TopLeft="133,385" />
-        <NodeLayout
-          Size="198,42"
-          Id="Package\SQC_ETL\SQL_TruncateDestination"
-          TopLeft="111,38" />
         <EdgeLayout
           Id="Package\SQC_ETL.PrecedenceConstraints[Constraint]"
-          TopLeft="209,427">
+          TopLeft="212.5,374">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,34"
+              EndConnector="0,87"
               Start="0,0"
-              End="0,26.5">
+              End="0,79.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\SQC_ETL.PrecedenceConstraints[Constraint 1]"
-          TopLeft="211.5,80">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,70"
-              Start="0,0"
-              End="0,62.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,62.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\SQC_ETL.PrecedenceConstraints[Constraint 2]"
-          TopLeft="209.5,353">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,32"
-              Start="0,0"
-              End="0,24.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.5" />
+                    End="0,79.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
