@@ -11,8 +11,8 @@
   DTS:LocaleID="1029"
   DTS:ObjectName="STG_COVID-19-FileToTable"
   DTS:PackageType="5"
-  DTS:VersionBuild="107"
-  DTS:VersionGUID="{5BD635A9-A9EC-4E69-BA48-470F7C1DA18E}">
+  DTS:VersionBuild="109"
+  DTS:VersionGUID="{35218833-27DA-423F-9960-61C6EAE90E5B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -213,6 +213,15 @@
         DTS:DataType="8"
         DTS:Name="ParameterValue"
         xml:space="preserve"></DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{27999A44-CB66-4691-AF8A-D9D0776C0626}"
+      DTS:ObjectName="LoadingMode">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">FullSync</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -418,7 +427,7 @@
       DTS:ExecutableType="Microsoft.ExpressionTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="EXP_SetStatusFailure"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExpressionTask
@@ -433,7 +442,7 @@
       DTS:ExecutableType="Microsoft.ExpressionTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="EXP_SetStatusSuccess"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExpressionTask
@@ -6193,7 +6202,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
               DTS:refId="Package\SQC_ETL\SQC_Processing\SQL_STG2DW"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:Disabled="True"
               DTS:DTSID="{5543c66d-1545-4d6a-92fc-b0c68d89f835}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
@@ -6203,17 +6211,17 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{567E2783-0805-45C3-BD09-CE9148326EA9}"
-                  SQLTask:SqlStatementSource="DELETE FROM [DW].[DEST_COVID19ITA]&#xA;WHERE&#xA;EXISTS&#xA; (&#xA; SELECT 1&#xA; FROM STG.[DEST_COVID19ITA] F&#xA; WHERE &#xA; F.HASHID = DW.[DEST_COVID19ITA].HASHID&#xA; AND&#xA; F.HASHROW  &lt;&gt; DW.[DEST_COVID19ITA].HASHROW&#xA; )&#xA;&#xA;&#xA;INSERT INTO [DW].[DEST_COVID19ITA]&#xA;           (&#xA;   [HASHID]&#xA;   ,[ID]&#xA;           ,[Datum]&#xA;           ,[Zeme]&#xA;           ,[RegionKod]&#xA;           ,[RegionPopis]&#xA;           ,[Hospitalizovano]&#xA;           ,[JIP]&#xA;           ,[HospitalizovanoCelkem]&#xA;           ,[Izolace]&#xA;           ,[AktualnePozitivni]&#xA;           ,[NovePozitivni]&#xA;           ,[Propuštění]&#xA;           ,[Zesnulí]&#xA;           ,[Celkem]&#xA;           ,[LoadDate]&#xA;           ,[SourceFile]&#xA;     ,[HASHROW])&#xA;SELECT &#xA;     [HASHID]&#xA;   ,[ID]&#xA;           ,[Datum]&#xA;           ,[Zeme]&#xA;           ,[RegionKod]&#xA;           ,[RegionPopis]&#xA;           ,[Hospitalizovano]&#xA;           ,[JIP]&#xA;           ,[HospitalizovanoCelkem]&#xA;           ,[Izolace]&#xA;           ,[AktualnePozitivni]&#xA;           ,[NovePozitivni]&#xA;           ,[Propuštění]&#xA;           ,[Zesnulí]&#xA;           ,[Celkem]&#xA;           ,[LoadDate]&#xA;           ,[SourceFile]&#xA;     ,[HASHROW]&#xA;FROM [STG].[DEST_COVID19ITA] T&#xA;WHERE NOT EXISTS&#xA;(&#xA; SELECT 1&#xA; FROM DW.[DEST_COVID19ITA] F&#xA; WHERE&#xA; F.HASHID  = T.HASHID&#xA;);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+                  SQLTask:SqlStatementSource="BEGIN TRAN&#xA;&#xA;DELETE FROM [DW].[DEST_COVID19ITA]&#xA;WHERE EXISTS&#xA;(&#xA;&#x9;SELECT 1 FROM [STG].[DEST_COVID19ITA_LOG] L&#xA;&#x9;WHERE [DW].[DEST_COVID19ITA].[HASHID]=L.[HASHID]&#xA;)&#xA;&#xA;INSERT INTO [DW].[DEST_COVID19ITA]&#xA;           ([HASHID]&#xA;           ,[ID]&#xA;           ,[Datum]&#xA;           ,[Zeme]&#xA;           ,[RegionKod]&#xA;           ,[RegionPopis]&#xA;           ,[Hospitalizovano]&#xA;           ,[JIP]&#xA;           ,[HospitalizovanoCelkem]&#xA;           ,[Izolace]&#xA;           ,[AktualnePozitivni]&#xA;           ,[NovePozitivni]&#xA;           ,[Propuštění]&#xA;           ,[Zesnulí]&#xA;           ,[Celkem]&#xA;           ,[LoadDate]&#xA;           ,[SourceFile]&#xA;           ,[HASHROW])&#xA;    &#xA;SELECT&#xA;&#x9;&#x9;&#x9;[HASHID]&#xA;           ,[ID]&#xA;           ,[Datum]&#xA;           ,[Zeme]&#xA;           ,[RegionKod]&#xA;           ,[RegionPopis]&#xA;           ,[Hospitalizovano]&#xA;           ,[JIP]&#xA;           ,[HospitalizovanoCelkem]&#xA;           ,[Izolace]&#xA;           ,[AktualnePozitivni]&#xA;           ,[NovePozitivni]&#xA;           ,[Propuštění]&#xA;           ,[Zesnulí]&#xA;           ,[Celkem]&#xA;           ,[LoadDate]&#xA;           ,[SourceFile]&#xA;           ,[HASHROW]&#xA;&#x9;FROM [STG].[DEST_COVID19ITA_LOG]&#xA;&#x9;WHERE OPERATION &lt;&gt; 'D';&#xA;COMMIT TRAN&#xA;&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
             <DTS:Executable
-              DTS:refId="Package\SQC_ETL\SQC_Processing\SQL_TruncateDestination"
+              DTS:refId="Package\SQC_ETL\SQC_Processing\SQL_TruncateLOG"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
               DTS:DTSID="{9c300d94-00a6-422b-ab65-8324bee78b98}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
-              DTS:ObjectName="SQL_TruncateDestination"
+              DTS:ObjectName="SQL_TruncateLOG"
               DTS:ThreadHint="1">
               <DTS:Variables />
               <DTS:ObjectData>
@@ -6236,7 +6244,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
               DTS:refId="Package\SQC_ETL\SQC_Processing.PrecedenceConstraints[Constraint 1]"
               DTS:CreationName=""
               DTS:DTSID="{909A50B3-BB7F-4EEC-913D-B87AC84730F1}"
-              DTS:From="Package\SQC_ETL\SQC_Processing\SQL_TruncateDestination"
+              DTS:From="Package\SQC_ETL\SQC_Processing\SQL_TruncateLOG"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 1"
               DTS:To="Package\SQC_ETL\SQC_Processing\DF_ReadFile" />
@@ -6428,35 +6436,34 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
   </resheader>
 </root>]]></ProjectItem>
                   <ProjectItem
-                    Name="Properties\AssemblyInfo.cs"
-                    Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
+                    Name="Properties\Settings.Designer.cs"
+                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
 
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_31dce66bdf384d6599d960f7d45fdbd7")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_31dce66bdf384d6599d960f7d45fdbd7")]
-[assembly: AssemblyCopyright("Copyright @  2020")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_31dce66bdf384d6599d960f7d45fdbd7.Properties.Settings.get_Default():ST_31dce66bdf384d6599d960f7d45fdbd7.Properties.Sett" +
+    "ings")]
 
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+namespace ST_31dce66bdf384d6599d960f7d45fdbd7.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
                   <ProjectItem
                     Name="ScriptMain.cs"
                     Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
@@ -6597,34 +6604,35 @@ namespace ST_31dce66bdf384d6599d960f7d45fdbd7
   </msb:ItemGroup>
 </c:Project>]]></ProjectItem>
                   <ProjectItem
-                    Name="Properties\Settings.Designer.cs"
-                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
+                    Name="Properties\AssemblyInfo.cs"
+                    Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
 //
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_31dce66bdf384d6599d960f7d45fdbd7")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_31dce66bdf384d6599d960f7d45fdbd7")]
+[assembly: AssemblyCopyright("Copyright @  2020")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
 
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_31dce66bdf384d6599d960f7d45fdbd7.Properties.Settings.get_Default():ST_31dce66bdf384d6599d960f7d45fdbd7.Properties.Sett" +
-    "ings")]
-
-namespace ST_31dce66bdf384d6599d960f7d45fdbd7.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Settings.settings"
                     Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
@@ -7095,25 +7103,33 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <NodeLayout
           Size="204,42"
           Id="Package\SQC_ETL\EXP_ETLIsRunningToFalse"
-          TopLeft="97.3333333333333,472.111111111111" />
+          TopLeft="112.333333333333,483.111111111111" />
         <NodeLayout
           Size="137,42"
           Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile"
-          TopLeft="65.111111111111,160.555555555556" />
+          TopLeft="64.111111111111,159.555555555556" />
+        <NodeLayout
+          Size="146,42"
+          Id="Package\SQC_ETL\SQC_Processing\SQL_STG2DW"
+          TopLeft="61.7222222222221,292.277777777778" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\SQC_ETL\SQC_Processing\SQL_TruncateLOG"
+          TopLeft="44.8333333333332,17.9444444444446" />
         <EdgeLayout
           Id="Package\SQC_ETL\SQC_Processing.PrecedenceConstraints[Constraint]"
-          TopLeft="134.166666666667,202.555555555556">
+          TopLeft="133.666666666667,201.555555555556">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,89.7222222222223"
+              EndConnector="0,90.722222222222"
               Start="0,0"
-              End="0,82.2222222222223">
+              End="0,83.222222222222">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,82.2222222222223" />
+                    End="0,83.222222222222" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7122,28 +7138,20 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="146,42"
-          Id="Package\SQC_ETL\SQC_Processing\SQL_STG2DW"
-          TopLeft="61.7222222222221,292.277777777778" />
-        <NodeLayout
-          Size="198,42"
-          Id="Package\SQC_ETL\SQC_Processing\SQL_TruncateDestination"
-          TopLeft="32.8333333333332,20.9444444444446" />
         <EdgeLayout
           Id="Package\SQC_ETL\SQC_Processing.PrecedenceConstraints[Constraint 1]"
-          TopLeft="132.722222222222,62.9444444444446">
+          TopLeft="129.972222222222,59.9444444444446">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,97.611111111111"
+              EndConnector="0,99.6111111111114"
               Start="0,0"
-              End="0,90.111111111111">
+              End="0,92.1111111111114">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,90.111111111111" />
+                    End="0,92.1111111111114" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7158,33 +7166,33 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           PanelSize="257,389"
           Size="257,432"
           Id="Package\SQC_ETL\SQC_Processing"
-          TopLeft="83.5555555555557,15" />
+          TopLeft="34.5555555555557,24" />
         <EdgeLayout
           Id="Package\SQC_ETL.PrecedenceConstraints[Constraint]"
-          TopLeft="212.055555555556,447">
+          TopLeft="163.055555555556,456">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-12.7222222222223,25.1111111111113"
+              EndConnector="51.2777777777776,27.1111111111109"
               Start="0,0"
-              End="-12.7222222222223,17.6111111111113">
+              End="51.2777777777776,19.6111111111109">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,8.55555555555566" />
+                    End="0,9.55555555555543" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,8.55555555555566"
-                    Point2="0,12.5555555555557"
-                    Point3="-4,12.5555555555557" />
+                    Point1="0,9.55555555555543"
+                    Point2="0,13.5555555555554"
+                    Point3="4,13.5555555555554" />
                   <mssgle:LineSegment
-                    End="-8.72222222222234,12.5555555555557" />
+                    End="47.2777777777776,13.5555555555554" />
                   <mssgle:CubicBezierSegment
-                    Point1="-8.72222222222234,12.5555555555557"
-                    Point2="-12.7222222222223,12.5555555555557"
-                    Point3="-12.7222222222223,16.5555555555557" />
+                    Point1="47.2777777777776,13.5555555555554"
+                    Point2="51.2777777777776,13.5555555555554"
+                    Point3="51.2777777777776,17.5555555555554" />
                   <mssgle:LineSegment
-                    End="-12.7222222222223,17.6111111111113" />
+                    End="51.2777777777776,19.6111111111109" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7521,29 +7529,77 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="171,42"
-          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile\SPL_OnlyValidRows"
-          TopLeft="165,119" />
-        <NodeLayout
           Size="134,42"
           Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile\FlatFileData"
           TopLeft="179.5,28.5" />
         <NodeLayout
-          Size="130,42"
-          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile\RC_Source"
-          TopLeft="181,328" />
+          Size="174,42"
+          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile\SCR_HASH_AND_ID"
+          TopLeft="160,236" />
         <NodeLayout
-          Size="136,42"
-          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile\InvalidRows"
-          TopLeft="410,123" />
+          Size="166,42"
+          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile\UNI_InsUpdDelete"
+          TopLeft="382,915" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile\Row Count"
+          TopLeft="891,606" />
+        <NodeLayout
+          Size="98,42"
+          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile\Sort"
+          TopLeft="199,411" />
+        <NodeLayout
+          Size="120,42"
+          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile\SPL_IUD"
+          TopLeft="400,606" />
+        <NodeLayout
+          Size="131,42"
+          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile\RC_Update"
+          TopLeft="400,723" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile\DEST_LOG"
+          TopLeft="399,1013" />
         <NodeLayout
           Size="159,42"
           Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile\DER_DatesInsert"
           TopLeft="118,800" />
         <NodeLayout
-          Size="174,42"
-          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile\SCR_HASH_AND_ID"
-          TopLeft="160,236" />
+          Size="130,42"
+          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile\RC_Source"
+          TopLeft="181,328" />
+        <NodeLayout
+          Size="126,42"
+          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile\RC_Insert"
+          TopLeft="130,722" />
+        <NodeLayout
+          Size="179,42"
+          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile\DS_DestTableHashes"
+          TopLeft="682,34" />
+        <NodeLayout
+          Size="128,42"
+          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile\RC_Delete"
+          TopLeft="690,722" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile\SPL_OnlyValidRows"
+          TopLeft="165,119" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile\MRJ_SourceDest"
+          TopLeft="381,517" />
+        <NodeLayout
+          Size="136,42"
+          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile\InvalidRows"
+          TopLeft="410,123" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile\DER_DatesUpdate"
+          TopLeft="386,798" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile\DER_DatesDelete"
+          TopLeft="678,800" />
         <EdgeLayout
           Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile.Paths[ValidRows]"
           TopLeft="248.75,161">
@@ -7569,65 +7625,43 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile.Paths[Output 0]"
-          TopLeft="246.5,278">
+          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile.Paths[Update]"
+          TopLeft="462.75,648">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,50"
+              EndConnector="0,75"
               Start="0,0"
-              End="0,42.5">
+              End="0,67.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,42.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile.Paths[NotValidRows]"
-          TopLeft="336,142">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="74,0"
-              Start="0,0"
-              End="66.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="66.5,0" />
+                    End="0,67.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="2.567421875,5,61.36515625,9.7490234375"
+              BoundingBox="-16.28029296875,27.9453125,32.5605859375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile.Paths[Flat File Source Output]"
-          TopLeft="248.5,70.5">
+          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile.Paths[Union All Output 1]"
+          TopLeft="464.5,957">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,48.5"
+              EndConnector="0,56"
               Start="0,0"
-              End="0,41">
+              End="0,48.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,41" />
+                    End="0,48.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7636,40 +7670,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="179,42"
-          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile\DS_DestTableHashes"
-          TopLeft="682,34" />
-        <NodeLayout
-          Size="98,42"
-          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile\Sort"
-          TopLeft="199,411" />
-        <EdgeLayout
-          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile.Paths[Row Count Output 1]"
-          TopLeft="247,370">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,41"
-              Start="0,0"
-              End="0,33.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="157,42"
-          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile\MRJ_SourceDest"
-          TopLeft="381,517" />
         <EdgeLayout
           Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile.Paths[Sort Output]"
           TopLeft="248,453">
@@ -7696,6 +7696,116 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                     Point3="186.666666666667,42.0126103404792" />
                   <mssgle:LineSegment
                     End="186.666666666667,56.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile.Paths[Row Count Output 13]"
+          TopLeft="756.5,764">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile.Paths[Row Count Output 12]"
+          TopLeft="467,765">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33"
+              Start="0,0"
+              End="0,25.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile.Paths[Row Count Output 11]"
+          TopLeft="195.25,764">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile.Paths[Row Count Output 1]"
+          TopLeft="247,370">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41"
+              Start="0,0"
+              End="0,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile.Paths[Output 0]"
+          TopLeft="246.5,278">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50"
+              Start="0,0"
+              End="0,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7738,10 +7848,54 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="120,42"
-          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile\SPL_IUD"
-          TopLeft="400,606" />
+        <EdgeLayout
+          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile.Paths[NotValidRows]"
+          TopLeft="336,142">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="74,0"
+              Start="0,0"
+              End="66.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="66.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="2.567421875,5,61.36515625,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile.Paths[NoChange]"
+          TopLeft="520,627">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="371,0"
+              Start="0,0"
+              End="363.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="363.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="158.59365234375,5,46.3126953125,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile.Paths[Merge Join Output]"
           TopLeft="459.75,559">
@@ -7764,10 +7918,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="126,42"
-          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile\RC_Insert"
-          TopLeft="130,722" />
         <EdgeLayout
           Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile.Paths[Insert]"
           TopLeft="441.333333333333,648">
@@ -7804,120 +7954,20 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="131,42"
-          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile\RC_Update"
-          TopLeft="400,723" />
         <EdgeLayout
-          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile.Paths[Update]"
-          TopLeft="462.75,648">
+          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile.Paths[Flat File Source Output]"
+          TopLeft="248.5,70.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,75"
+              EndConnector="0,48.5"
               Start="0,0"
-              End="0,67.5">
+              End="0,41">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,67.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-16.28029296875,27.9453125,32.5605859375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="128,42"
-          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile\RC_Delete"
-          TopLeft="690,722" />
-        <EdgeLayout
-          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile.Paths[Delete]"
-          TopLeft="488,648">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="266,74"
-              Start="0,0"
-              End="266,66.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.7391304347826" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21.7391304347826"
-                    Point2="0,25.7391304347826"
-                    Point3="4,25.7391304347826" />
-                  <mssgle:LineSegment
-                    End="262,25.7391304347826" />
-                  <mssgle:CubicBezierSegment
-                    Point1="262,25.7391304347826"
-                    Point2="266,25.7391304347826"
-                    Point3="266,29.7391304347826" />
-                  <mssgle:LineSegment
-                    End="266,66.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="118.40365234375,30.7391304347826,29.1926953125,9.724609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="130,42"
-          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile\Row Count"
-          TopLeft="891,606" />
-        <EdgeLayout
-          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile.Paths[NoChange]"
-          TopLeft="520,627">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="371,0"
-              Start="0,0"
-              End="363.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="363.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="158.59365234375,5,46.3126953125,11.6630859375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="165,42"
-          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile\DER_DatesUpdate"
-          TopLeft="386,798" />
-        <EdgeLayout
-          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile.Paths[Row Count Output 11]"
-          TopLeft="195.25,764">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,36"
-              Start="0,0"
-              End="0,28.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.5" />
+                    End="0,41" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7926,58 +7976,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile.Paths[Row Count Output 12]"
-          TopLeft="467,765">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,33"
-              Start="0,0"
-              End="0,25.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="162,42"
-          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile\DER_DatesDelete"
-          TopLeft="678,800" />
-        <EdgeLayout
-          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile.Paths[Row Count Output 13]"
-          TopLeft="756.5,764">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,36"
-              Start="0,0"
-              End="0,28.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="166,42"
-          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile\UNI_InsUpdDelete"
-          TopLeft="382,915" />
         <EdgeLayout
           Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile.Paths[Derived Column Output2]"
           TopLeft="197.5,842">
@@ -8004,28 +8002,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                     Point3="228,51.897233201581" />
                   <mssgle:LineSegment
                     End="228,65.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile.Paths[Derived Column Output]"
-          TopLeft="466.75,840">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,75"
-              Start="0,0"
-              End="0,67.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,67.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8068,24 +8044,20 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="130,42"
-          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile\DEST_LOG"
-          TopLeft="399,1013" />
         <EdgeLayout
-          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile.Paths[Union All Output 1]"
-          TopLeft="464.5,957">
+          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile.Paths[Derived Column Output]"
+          TopLeft="466.75,840">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,56"
+              EndConnector="0,75"
               Start="0,0"
-              End="0,48.5">
+              End="0,67.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,48.5" />
+                    End="0,67.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8094,17 +8066,45 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SQC_ETL\SQC_Processing\DF_ReadFile.Paths[Delete]"
+          TopLeft="488,648">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="266,74"
+              Start="0,0"
+              End="266,66.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.7391304347826" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.7391304347826"
+                    Point2="0,25.7391304347826"
+                    Point3="4,25.7391304347826" />
+                  <mssgle:LineSegment
+                    End="262,25.7391304347826" />
+                  <mssgle:CubicBezierSegment
+                    Point1="262,25.7391304347826"
+                    Point2="266,25.7391304347826"
+                    Point3="266,29.7391304347826" />
+                  <mssgle:LineSegment
+                    End="266,66.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="118.40365234375,30.7391304347826,29.1926953125,9.724609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\SQC_ETL\SQC_Processing\DF_ReadFile\DS_DestTableHashes">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\SQC_ETL\SQC_Processing\DF_ReadFile\DEST_LOG">
     <Properties>
@@ -8115,6 +8115,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SQC_ETL\SQC_Processing\DF_ReadFile\DS_DestTableHashes">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
