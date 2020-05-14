@@ -5,21 +5,21 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="X230"
   DTS:CreatorName="X230\Rene.Moyzes"
-  DTS:DTSID="{F3626385-8328-4EEA-88E0-D7521222FD23}"
+  DTS:DTSID="{C81DEEE2-70B5-4582-9711-85CD63E4014D}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.1100.123"
   DTS:LocaleID="1029"
-  DTS:ObjectName="STG_COVID-19-FileToTable"
+  DTS:ObjectName="STG_COVID-19-FileToTable OneRunLog"
   DTS:PackageType="5"
-  DTS:VersionBuild="119"
-  DTS:VersionGUID="{6ACA92D4-F724-4323-AC93-224F4DC6045E}">
+  DTS:VersionBuild="115"
+  DTS:VersionGUID="{43DDFD0D-0715-4CD2-B7C7-1DC985CBAB05}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[FileData]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{4A2C87EA-3874-4F39-BA59-11DCD8AE6042}"
+      DTS:DTSID="{8B5D7EC3-0D4C-4655-A458-3857AD852037}"
       DTS:ObjectName="FileData">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[$Package::SourceFilePath]</DTS:PropertyExpression>
@@ -40,7 +40,7 @@
               DTS:DataType="304"
               DTS:TextQualified="True"
               DTS:ObjectName="Datum"
-              DTS:DTSID="{C3E97EB1-658E-440C-A59E-EDF071EF8FBA}"
+              DTS:DTSID="{6339A468-043C-48A3-BAAE-CCE642D351D0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -49,7 +49,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Zeme"
-              DTS:DTSID="{1589799E-DC49-4D60-BB62-F4445062AA24}"
+              DTS:DTSID="{D2FF94E0-A115-49B6-B346-CF01507C3F4C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -58,7 +58,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="RegionKod"
-              DTS:DTSID="{029A14A9-9A67-4E02-BA51-040B55AE2F5F}"
+              DTS:DTSID="{76D03DCE-F127-44EE-A800-37AE60397C1C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -67,7 +67,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="RegionPopis"
-              DTS:DTSID="{375706BC-1149-4731-A2B7-9BA5D01B7474}"
+              DTS:DTSID="{41406881-1B87-431E-A2B9-423A510BAFE0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -76,7 +76,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="lat"
-              DTS:DTSID="{3FB3980E-7BAC-4F8C-B9B9-90F6A514A2F8}"
+              DTS:DTSID="{6063E0D3-2664-4072-BE53-5645FF087958}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -85,7 +85,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="long"
-              DTS:DTSID="{98859DCE-C54F-4179-9622-082691311DB6}"
+              DTS:DTSID="{6293ACBF-C5E3-416F-B897-F961CD1BAD0D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -93,7 +93,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="Hospitalizovano"
-              DTS:DTSID="{50B8C8E6-F238-4DB8-8D60-E9925F05D41E}"
+              DTS:DTSID="{469E1664-ACB6-461A-8095-1DF5C9FA0B7F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -101,7 +101,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="JIP"
-              DTS:DTSID="{ADE113CF-59ED-42C6-B815-49A94E7E7D73}"
+              DTS:DTSID="{75145DC7-D314-47EA-A00C-5A75CE522D16}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -109,7 +109,7 @@
               DTS:DataType="21"
               DTS:TextQualified="True"
               DTS:ObjectName="HospitalizovanoCelkem"
-              DTS:DTSID="{54F183D6-56E0-4630-97BB-EC6CAD4DC7EF}"
+              DTS:DTSID="{AB1C9A29-53A3-4170-BD6D-A8234E33570E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -117,7 +117,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="Izolace"
-              DTS:DTSID="{863871B8-4DE6-4443-8FAF-917DA7D94845}"
+              DTS:DTSID="{F892BAF0-EC3A-4871-91A4-5E2C9C4BB84F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -125,7 +125,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="AktualnePozitivni"
-              DTS:DTSID="{3B62DCFD-81F0-4697-B411-5567A2CCB970}"
+              DTS:DTSID="{A8967133-95A3-49BC-9909-5C3F4FB0D7A0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -133,7 +133,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="NovePozitivni"
-              DTS:DTSID="{B6B002DD-3E0A-4BF6-BD62-AC80B3A9D22C}"
+              DTS:DTSID="{A12A4E2D-31ED-47A6-8E9E-1C28DB561076}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -141,7 +141,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="Propuštění"
-              DTS:DTSID="{A2535DCD-ABB4-450C-8BFD-1E2984579492}"
+              DTS:DTSID="{1247DD60-C772-470D-BBE5-3F498EBC53CD}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -149,7 +149,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="Zesnulí"
-              DTS:DTSID="{DBCD5B8E-FE6B-4150-B3BC-C2E25A3FA934}"
+              DTS:DTSID="{F5297913-9CAF-451F-B192-C695F0559ACE}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -157,7 +157,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="Celkem"
-              DTS:DTSID="{D848F7E4-2182-4375-BF0C-3FEEDF9FA7EC}"
+              DTS:DTSID="{5707BF92-B290-4FC4-8E94-DC363D2C54C4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -166,7 +166,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="tamponi"
-              DTS:DTSID="{E83864B9-E0E2-4E55-8540-7ABBDBA4B972}"
+              DTS:DTSID="{0223B27D-B9BB-430B-B516-795575E2D530}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -175,7 +175,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="note_it"
-              DTS:DTSID="{7E3CABE3-01BF-4BB3-BEF3-7045339D0869}"
+              DTS:DTSID="{28D14D65-B5FA-4AD9-A47A-828A04D3CDCB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -184,7 +184,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="note_en"
-              DTS:DTSID="{AB09F46A-B6F6-497E-9E00-08D0BFCAC64F}"
+              DTS:DTSID="{0837E167-27A4-472B-8739-7B1D8FFE4688}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -196,7 +196,7 @@
       DTS:CreationName=""
       DTS:DataType="8"
       DTS:Description="Name of destination table"
-      DTS:DTSID="{0A2B4360-DD26-4976-8F50-EC4CF2EFF0F7}"
+      DTS:DTSID="{062D03F3-0234-4CE8-B6A4-7784796E3626}"
       DTS:ObjectName="DestTableName">
       <DTS:Property
         DTS:DataType="8"
@@ -207,7 +207,7 @@
       DTS:CreationName=""
       DTS:DataType="8"
       DTS:Description="Name of destination schema"
-      DTS:DTSID="{46938F04-0673-4F22-8EFC-0BB8F42AD93C}"
+      DTS:DTSID="{EF1A155B-7260-4B42-91FC-34A71E9973E0}"
       DTS:ObjectName="DestTableSchema">
       <DTS:Property
         DTS:DataType="8"
@@ -217,7 +217,7 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="11"
-      DTS:DTSID="{524EFFAE-BB8F-4FE3-9313-8AF5DC331C75}"
+      DTS:DTSID="{804A717F-FA63-4D5B-B868-89AF1BFB0C71}"
       DTS:ObjectName="DisableDestHASHROW">
       <DTS:Property
         DTS:DataType="11"
@@ -226,7 +226,7 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="8"
-      DTS:DTSID="{27999A44-CB66-4691-AF8A-D9D0776C0626}"
+      DTS:DTSID="{983304EA-C341-46F2-A64B-86B19CBA6974}"
       DTS:ObjectName="LoadingMode">
       <DTS:Property
         DTS:DataType="8"
@@ -235,7 +235,7 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="3"
-      DTS:DTSID="{75B62775-FE34-4A7A-BE87-BE31E6D6A25E}"
+      DTS:DTSID="{D07708C2-3B33-4865-94D2-F270645462F3}"
       DTS:ObjectName="LoggingWaiting">
       <DTS:Property
         DTS:DataType="3"
@@ -244,7 +244,7 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="3"
-      DTS:DTSID="{33026678-F0DB-4378-A814-3ED4B5EB6E3C}"
+      DTS:DTSID="{78AE585F-801F-4922-BE41-6D962F290A6A}"
       DTS:ObjectName="ProcessWaiting">
       <DTS:Property
         DTS:DataType="3"
@@ -253,7 +253,7 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="8"
-      DTS:DTSID="{50F58E96-B925-4D3C-A05E-023F936CFF22}"
+      DTS:DTSID="{41023B3C-D7E0-44F5-AD49-49E4418990B2}"
       DTS:ObjectName="SourceFilePath">
       <DTS:Property
         DTS:DataType="8"
@@ -262,7 +262,7 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="8"
-      DTS:DTSID="{AE10783D-E39F-4E0F-AD1D-4F5F68EAD067}"
+      DTS:DTSID="{6070043B-B615-433A-ADBC-D701CA5ABC84}"
       DTS:ObjectName="SourceTableName">
       <DTS:Property
         DTS:DataType="8"
@@ -271,7 +271,7 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="8"
-      DTS:DTSID="{A10F2E54-C3E0-4E8F-8BC8-5D55F5C5A031}"
+      DTS:DTSID="{C7B99D2F-3E3F-48AB-90FF-062F8056B0B7}"
       DTS:ObjectName="SourceTableSchema">
       <DTS:Property
         DTS:DataType="8"
@@ -281,7 +281,7 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{A7E4046B-BCEA-4C1E-91E6-4392FA5B7DAC}"
+      DTS:DTSID="{30AE4F66-88F4-4DB4-866A-F53B3AD42C96}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[$Package::DestTableSchema]+&quot;.&quot;+@[$Package::DestTableName]"
       DTS:IncludeInDebugDump="2345"
@@ -292,7 +292,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{0E8D24C8-D4E9-4A32-A7CC-A5BC54CB1261}"
+      DTS:DTSID="{4577BFB9-75B8-4F45-B1D2-853100CE3555}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="ETLFrameworkExecutionID">
@@ -301,7 +301,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{B4CE853B-8393-4B29-B133-ADC9A9655330}"
+      DTS:DTSID="{0EB9E0F3-F83B-436B-BEB4-341A8EB088B8}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="ETLIsRunning">
@@ -310,7 +310,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{499BA66F-AAAE-4083-9132-664CC070FF38}"
+      DTS:DTSID="{7172BC6A-8C08-44B5-AF77-D27C25E60ECD}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="ExecutionStatus">
@@ -319,7 +319,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{525E2F48-6F08-4603-9BFE-80B9D547B3F7}"
+      DTS:DTSID="{3D4E0A37-2737-4C91-9AD4-E632CA56BE2C}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="ProcessingInProgress">
@@ -328,7 +328,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{283881B5-17BB-451D-AF26-8389A869490D}"
+      DTS:DTSID="{3A698C7C-BDB2-4214-B572-8EB7585E3AE6}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="RC_DestinationNoChange">
@@ -337,7 +337,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{7209ED7A-3ADF-401C-A08B-B250716ABE0A}"
+      DTS:DTSID="{6CDC218E-25FD-46B1-B757-EE9618498929}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="RC_DestinationRows">
@@ -346,7 +346,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{658BA33A-CD2A-4AD9-B5F7-CB8E5912F665}"
+      DTS:DTSID="{A1E80528-2F3F-4D34-BA09-15A9064EDA13}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="RC_DestinationRowsDelete">
@@ -355,7 +355,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{C90EF2EF-E07C-4E6F-83BA-A10D98CA5C74}"
+      DTS:DTSID="{14471B62-49C9-4C94-A099-9070959763F4}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="RC_DestinationRowsInsert">
@@ -364,7 +364,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{5CBE3E54-B0C5-4DD6-91CE-871E44D9984F}"
+      DTS:DTSID="{C5357513-E12F-4D66-AC00-258371D65236}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="RC_DestinationRowsUpdate">
@@ -373,7 +373,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{3B5B784B-C591-484D-B054-D99F232C1D68}"
+      DTS:DTSID="{45B8A078-C339-4757-B908-C80A1250AF90}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="RC_InvalidRows">
@@ -382,7 +382,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{226C23B4-B44A-4FF3-95DE-81035B0561F4}"
+      DTS:DTSID="{D1CEE1CD-255B-4B60-9AF5-CAABAD5197F0}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="RC_SourceTable">
@@ -391,7 +391,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{4D5BB942-D641-4B4A-84C5-BEC8109293C0}"
+      DTS:DTSID="{F4EC7260-8CF0-4762-A64B-B61971EE3387}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[$Package::SourceTableSchema]+&quot; &quot; + @[$Package::SourceTableName]"
       DTS:IncludeInDebugDump="2345"
@@ -402,7 +402,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{01040214-9668-42AD-9B14-AB02D6392ED5}"
+      DTS:DTSID="{EE3FBC26-864F-4BE2-95C5-27FD481789B8}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;TRUNCATE TABLE &quot; + @[$Package::DestTableSchema]+&quot;.&quot; + @[$Package::DestTableName]"
       DTS:IncludeInDebugDump="2345"
@@ -417,7 +417,7 @@
       DTS:refId="Package\EXP_Dummy"
       DTS:CreationName="Microsoft.ExpressionTask"
       DTS:Description="Expression Task"
-      DTS:DTSID="{64ED0A90-9D2D-4E4C-B1A8-635FDD4777BD}"
+      DTS:DTSID="{6F2C6D88-6FC0-4F81-BF84-8A2D5EF27654}"
       DTS:ExecutableType="Microsoft.ExpressionTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="EXP_Dummy"
@@ -432,11 +432,11 @@
       DTS:refId="Package\EXP_SetStatusFailure"
       DTS:CreationName="Microsoft.ExpressionTask"
       DTS:Description="Expression Task"
-      DTS:DTSID="{89CAC5A9-789A-48A0-8D5A-E463A5E5837A}"
+      DTS:DTSID="{0C894099-7E25-468E-B9F9-6B6CAB46C363}"
       DTS:ExecutableType="Microsoft.ExpressionTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="EXP_SetStatusFailure"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExpressionTask
@@ -447,11 +447,11 @@
       DTS:refId="Package\EXP_SetStatusSuccess"
       DTS:CreationName="Microsoft.ExpressionTask"
       DTS:Description="Expression Task"
-      DTS:DTSID="{E099C67E-D402-4D72-BBE7-8D6B0763B2A5}"
+      DTS:DTSID="{780EAF5D-09AF-4579-924A-F2C6925C48BF}"
       DTS:ExecutableType="Microsoft.ExpressionTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="EXP_SetStatusSuccess"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExpressionTask
@@ -462,7 +462,7 @@
       DTS:refId="Package\SQC_ETL"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{B45F2A72-39BF-4E99-AF02-CAE80F493205}"
+      DTS:DTSID="{9EBF4DD6-4C44-466C-8F84-168F0286D92B}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:MaxErrorCount="0"
@@ -473,11 +473,11 @@
           DTS:refId="Package\SQC_ETL\EXP_ETLIsRunningToFalse"
           DTS:CreationName="Microsoft.ExpressionTask"
           DTS:Description="Expression Task"
-          DTS:DTSID="{8df8a850-742d-46ad-9399-ddbe2a315226}"
+          DTS:DTSID="{7464FD64-949B-400F-A322-B8F820EF3A24}"
           DTS:ExecutableType="Microsoft.ExpressionTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="EXP_ETLIsRunningToFalse"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <ExpressionTask
@@ -488,7 +488,7 @@
           DTS:refId="Package\SQC_ETL\SQC_Processing"
           DTS:CreationName="STOCK:SEQUENCE"
           DTS:Description="Sequence Container"
-          DTS:DTSID="{D1CBDB10-0D6D-4778-B7DD-EBA6F5298B37}"
+          DTS:DTSID="{3AE628AB-F8C5-49CF-8A16-22986F6B998E}"
           DTS:ExecutableType="STOCK:SEQUENCE"
           DTS:LocaleID="-1"
           DTS:ObjectName="SQC_Processing">
@@ -499,7 +499,7 @@
               DTS:CreationName="Microsoft.Pipeline"
               DTS:DelayValidation="True"
               DTS:Description="Data Flow Task"
-              DTS:DTSID="{985D3844-862E-4047-B57E-861363EAAE17}"
+              DTS:DTSID="{94FB2A57-1A0A-4CB3-9046-E9A69629AF6A}"
               DTS:ExecutableType="Microsoft.Pipeline"
               DTS:LocaleID="-1"
               DTS:ObjectName="DF_ReadFile"
@@ -6376,49 +6376,35 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
               </DTS:ObjectData>
             </DTS:Executable>
             <DTS:Executable
-              DTS:refId="Package\SQC_ETL\SQC_Processing\SQL_ClearLOG"
-              DTS:CreationName="Microsoft.ExecuteSQLTask"
-              DTS:Description="Execute SQL Task"
-              DTS:DTSID="{9c300d94-00a6-422b-ab65-8324bee78b98}"
-              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-              DTS:LocaleID="-1"
-              DTS:ObjectName="SQL_ClearLOG"
-              DTS:ThreadHint="1">
-              <DTS:Variables />
-              <DTS:ObjectData>
-                <SQLTask:SqlTaskData
-                  SQLTask:Connection="{567E2783-0805-45C3-BD09-CE9148326EA9}"
-                  SQLTask:SqlStatementSource="DELETE STG.[DEST_COVID19ITA_LOG]&#xA;WHERE LoadDate&lt;DATEADD(&quot;d&quot;,-?,getdate())" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-                  <SQLTask:ParameterBinding
-                    SQLTask:ParameterName="0"
-                    SQLTask:DtsVariableName="$Project::LogPersistenceInDays"
-                    SQLTask:ParameterDirection="Input"
-                    SQLTask:DataType="20"
-                    SQLTask:ParameterSize="-1" />
-                </SQLTask:SqlTaskData>
-              </DTS:ObjectData>
-            </DTS:Executable>
-            <DTS:Executable
               DTS:refId="Package\SQC_ETL\SQC_Processing\SQL_STG2DW"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{5543c66d-1545-4d6a-92fc-b0c68d89f835}"
+              DTS:DTSID="{F6356652-8E6C-4570-ADDE-DED3999182F9}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="SQL_STG2DW"
-              DTS:ThreadHint="1">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{567E2783-0805-45C3-BD09-CE9148326EA9}"
-                  SQLTask:SqlStatementSource="BEGIN TRAN&#xA;&#xA;DECLARE  @CurrentEXECID Int;&#xA;SET @CurrentEXECID=?;&#xA;&#xA;DELETE FROM [DW].[DEST_COVID19ITA]&#xA;WHERE EXISTS&#xA;(&#xA;&#x9;SELECT 1 FROM [STG].[DEST_COVID19ITA_LOG] L&#xA;&#x9;WHERE [DW].[DEST_COVID19ITA].[HASHID]=L.[HASHID]&#xA;&#x9;AND L.EXECID = @CurrentEXECID&#xA;)&#xA;&#xA;INSERT INTO [DW].[DEST_COVID19ITA]&#xA;           ([HASHID]&#xA;           ,[ID]&#xA;           ,[Datum]&#xA;           ,[Zeme]&#xA;           ,[RegionKod]&#xA;           ,[RegionPopis]&#xA;           ,[Hospitalizovano]&#xA;           ,[JIP]&#xA;           ,[HospitalizovanoCelkem]&#xA;           ,[Izolace]&#xA;           ,[AktualnePozitivni]&#xA;           ,[NovePozitivni]&#xA;           ,[Propuštění]&#xA;           ,[Zesnulí]&#xA;           ,[Celkem]&#xA;           ,[LoadDate]&#xA;           ,[SourceFile]&#xA;           ,[HASHROW]&#xA;            ,EXECID)&#xA;    &#xA;SELECT&#xA;&#x9;&#x9;&#x9;[HASHID]&#xA;           ,[ID]&#xA;           ,[Datum]&#xA;           ,[Zeme]&#xA;           ,[RegionKod]&#xA;           ,[RegionPopis]&#xA;           ,[Hospitalizovano]&#xA;           ,[JIP]&#xA;           ,[HospitalizovanoCelkem]&#xA;           ,[Izolace]&#xA;           ,[AktualnePozitivni]&#xA;           ,[NovePozitivni]&#xA;           ,[Propuštění]&#xA;           ,[Zesnulí]&#xA;           ,[Celkem]&#xA;           ,[LoadDate]&#xA;           ,[SourceFile]&#xA;           ,[HASHROW]&#xA;           ,EXECID&#xA;&#x9;FROM [STG].[DEST_COVID19ITA_LOG]&#xA;&#x9;WHERE OPERATION &lt;&gt; 'D' AND EXECID = @CurrentEXECID;&#xA;COMMIT TRAN;&#xA;&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-                  <SQLTask:ParameterBinding
-                    SQLTask:ParameterName="0"
-                    SQLTask:DtsVariableName="User::ETLFrameworkExecutionID"
-                    SQLTask:ParameterDirection="Input"
-                    SQLTask:DataType="20"
-                    SQLTask:ParameterSize="-1" />
-                </SQLTask:SqlTaskData>
+                  SQLTask:SqlStatementSource="BEGIN TRAN&#xA;&#xA;DELETE FROM [DW].[DEST_COVID19ITA]&#xA;WHERE EXISTS&#xA;(&#xA;&#x9;SELECT 1 FROM [STG].[DEST_COVID19ITA_LOG] L&#xA;&#x9;WHERE [DW].[DEST_COVID19ITA].[HASHID]=L.[HASHID]&#xA;)&#xA;&#xA;INSERT INTO [DW].[DEST_COVID19ITA]&#xA;           ([HASHID]&#xA;           ,[ID]&#xA;           ,[Datum]&#xA;           ,[Zeme]&#xA;           ,[RegionKod]&#xA;           ,[RegionPopis]&#xA;           ,[Hospitalizovano]&#xA;           ,[JIP]&#xA;           ,[HospitalizovanoCelkem]&#xA;           ,[Izolace]&#xA;           ,[AktualnePozitivni]&#xA;           ,[NovePozitivni]&#xA;           ,[Propuštění]&#xA;           ,[Zesnulí]&#xA;           ,[Celkem]&#xA;           ,[LoadDate]&#xA;           ,[SourceFile]&#xA;           ,[HASHROW]&#xA;            ,EXECID)&#xA;    &#xA;SELECT&#xA;&#x9;&#x9;&#x9;[HASHID]&#xA;           ,[ID]&#xA;           ,[Datum]&#xA;           ,[Zeme]&#xA;           ,[RegionKod]&#xA;           ,[RegionPopis]&#xA;           ,[Hospitalizovano]&#xA;           ,[JIP]&#xA;           ,[HospitalizovanoCelkem]&#xA;           ,[Izolace]&#xA;           ,[AktualnePozitivni]&#xA;           ,[NovePozitivni]&#xA;           ,[Propuštění]&#xA;           ,[Zesnulí]&#xA;           ,[Celkem]&#xA;           ,[LoadDate]&#xA;           ,[SourceFile]&#xA;           ,[HASHROW]&#xA;           ,EXECID&#xA;&#x9;FROM [STG].[DEST_COVID19ITA_LOG]&#xA;&#x9;WHERE OPERATION &lt;&gt; 'D';&#xA;COMMIT TRAN&#xA;&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\SQC_ETL\SQC_Processing\SQL_TruncateLOG"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{519F16F3-AED9-4203-AA55-290C022A345B}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="SQL_TruncateLOG"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{567E2783-0805-45C3-BD09-CE9148326EA9}"
+                  SQLTask:SqlStatementSource="TRUNCATE TABLE STG.[DEST_COVID19ITA_LOG]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
           </DTS:Executables>
@@ -6426,7 +6412,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
             <DTS:PrecedenceConstraint
               DTS:refId="Package\SQC_ETL\SQC_Processing.PrecedenceConstraints[Constraint]"
               DTS:CreationName=""
-              DTS:DTSID="{F06B442A-9AE6-400E-AB0B-09F1275791D1}"
+              DTS:DTSID="{6A94CA38-900A-4E2D-989D-0E1F909DA95A}"
               DTS:From="Package\SQC_ETL\SQC_Processing\DF_ReadFile"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint"
@@ -6434,8 +6420,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
             <DTS:PrecedenceConstraint
               DTS:refId="Package\SQC_ETL\SQC_Processing.PrecedenceConstraints[Constraint 1]"
               DTS:CreationName=""
-              DTS:DTSID="{909A50B3-BB7F-4EEC-913D-B87AC84730F1}"
-              DTS:From="Package\SQC_ETL\SQC_Processing\SQL_ClearLOG"
+              DTS:DTSID="{46A970C5-C139-4751-9611-61E05BB0C19D}"
+              DTS:From="Package\SQC_ETL\SQC_Processing\SQL_TruncateLOG"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 1"
               DTS:To="Package\SQC_ETL\SQC_Processing\DF_ReadFile" />
@@ -6446,7 +6432,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\SQC_ETL.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{E6AF57AE-BABD-4A79-90DA-A81A5E76389A}"
+          DTS:DTSID="{669B8E54-1023-4E20-BFD1-4724F6BA8273}"
           DTS:From="Package\SQC_ETL\SQC_Processing"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -6457,7 +6443,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
       DTS:refId="Package\SQC_LogRunning"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{27B35554-D880-4067-A661-010F669529D7}"
+      DTS:DTSID="{2DF66549-633E-4991-B33D-DB229E36409E}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="SQC_LogRunning">
@@ -6467,7 +6453,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
           DTS:refId="Package\SQC_LogRunning\FLC_LogRunning"
           DTS:CreationName="STOCK:FORLOOP"
           DTS:Description="For Loop Container"
-          DTS:DTSID="{7804D12A-30E0-4529-BCC9-12ECF1A0ADC3}"
+          DTS:DTSID="{8008D54D-D878-460E-A1B3-178A48B5EF45}"
           DTS:EvalExpression="@[User::ETLIsRunning]"
           DTS:ExecutableType="STOCK:FORLOOP"
           DTS:LocaleID="-1"
@@ -6479,15 +6465,15 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
               DTS:refId="Package\SQC_LogRunning\FLC_LogRunning\SCR_WaitForLogging"
               DTS:CreationName="Microsoft.ScriptTask"
               DTS:Description="Script Task"
-              DTS:DTSID="{6FBE4AE6-81F0-4A44-B54D-D32DC3C9FF59}"
+              DTS:DTSID="{8A3F6DCB-8A92-4880-9ABD-AB40B2E0199F}"
               DTS:ExecutableType="Microsoft.ScriptTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="SCR_WaitForLogging"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="1">
               <DTS:Variables>
                 <DTS:Variable
                   DTS:CreationName=""
-                  DTS:DTSID="{B5D83C84-C46E-4235-BF3C-4C47C5303C3D}"
+                  DTS:DTSID="{5A76754A-5895-492F-9985-91FAB7B2BB91}"
                   DTS:EvaluateAsExpression="True"
                   DTS:Expression="@[$Package::LoggingWaiting]"
                   DTS:IncludeInDebugDump="2345"
@@ -6627,14 +6613,35 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
   </resheader>
 </root>]]></ProjectItem>
                   <ProjectItem
-                    Name="Properties\Settings.settings"
-                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                    Name="Properties\AssemblyInfo.cs"
+                    Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_31dce66bdf384d6599d960f7d45fdbd7")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_31dce66bdf384d6599d960f7d45fdbd7")]
+[assembly: AssemblyCopyright("Copyright @  2020")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
                   <ProjectItem
                     Name="ScriptMain.cs"
                     Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
@@ -6804,35 +6811,14 @@ namespace ST_31dce66bdf384d6599d960f7d45fdbd7.Properties {
     }
 }]]></ProjectItem>
                   <ProjectItem
-                    Name="Properties\AssemblyInfo.cs"
-                    Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_31dce66bdf384d6599d960f7d45fdbd7")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_31dce66bdf384d6599d960f7d45fdbd7")]
-[assembly: AssemblyCopyright("Copyright @  2020")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                    Name="Properties\Settings.settings"
+                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Resources.Designer.cs"
                     Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -7026,11 +7012,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
               DTS:refId="Package\SQC_LogRunning\FLC_LogRunning\SQL_LogExecutionRunning"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{57A98FBD-593C-4798-A14F-98E32F94E5A0}"
+              DTS:DTSID="{A50F1E5E-E76A-4FF9-B040-36449C18B8AA}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="SQL_LogExecutionRunning"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="1">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -7086,7 +7072,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             <DTS:PrecedenceConstraint
               DTS:refId="Package\SQC_LogRunning\FLC_LogRunning.PrecedenceConstraints[Constraint]"
               DTS:CreationName=""
-              DTS:DTSID="{21A24029-5E81-4646-80F7-196A48920E5F}"
+              DTS:DTSID="{3AE1B944-1999-4BBC-932B-775C4639857B}"
               DTS:From="Package\SQC_LogRunning\FLC_LogRunning\SCR_WaitForLogging"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint"
@@ -7099,7 +7085,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       DTS:refId="Package\SQL_LogExecutionEnd"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{562E485B-ACDA-46AE-A648-952DE58088AB}"
+      DTS:DTSID="{F385BD5F-F309-4E5D-8255-B4A60EE8030C}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="SQL_LogExecutionEnd"
@@ -7158,7 +7144,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       DTS:refId="Package\SQL_LogExecutionStart"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{204DB753-BD9E-4A26-9DB6-890A0602D358}"
+      DTS:DTSID="{79F89C03-1FB1-4B92-9BEB-606623F4BDD7}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="SQL_LogExecutionStart"
@@ -7198,7 +7184,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{7F75A521-5492-4F68-B1D1-E6B7B6BE690F}"
+      DTS:DTSID="{8B189948-5DB1-452A-B681-9FEB5B2FA81C}"
       DTS:From="Package\SQC_ETL"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -7206,7 +7192,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{FBEFD184-AB5E-4E6E-A912-B1BB88D4BBB2}"
+      DTS:DTSID="{375341FE-E6C7-4C20-8A61-D2B7B13CE7B9}"
       DTS:From="Package\SQL_LogExecutionStart"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -7214,7 +7200,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{2CEF37C8-A37A-4CFE-8DEB-DE76D35B9B11}"
+      DTS:DTSID="{99B2F452-89E8-4612-B52F-F5EED066BA91}"
       DTS:From="Package\SQC_ETL"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
@@ -7223,21 +7209,21 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{2F7000BF-02AA-448A-B85C-A76C92519EBA}"
+      DTS:DTSID="{0446A45A-4336-4BE9-AD7A-03B59562E455}"
       DTS:From="Package\EXP_SetStatusSuccess"
       DTS:ObjectName="Constraint 3"
       DTS:To="Package\EXP_Dummy" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
       DTS:CreationName=""
-      DTS:DTSID="{79B6E0BD-D957-447A-A429-1D8EDF90CF53}"
+      DTS:DTSID="{ED560884-3C79-4944-9E71-95DC271BB7CF}"
       DTS:From="Package\EXP_SetStatusFailure"
       DTS:ObjectName="Constraint 4"
       DTS:To="Package\EXP_Dummy" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
       DTS:CreationName=""
-      DTS:DTSID="{6B453DA4-5806-40A0-990E-C61CC89F6C10}"
+      DTS:DTSID="{61241956-EEFA-416D-BB01-7FDCF5A935C6}"
       DTS:From="Package\SQL_LogExecutionStart"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 5"
@@ -7245,7 +7231,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
       DTS:CreationName=""
-      DTS:DTSID="{468598D9-173A-45D7-BC79-B50A7AAF83DF}"
+      DTS:DTSID="{EC117FA6-26B8-43F3-AD42-D235BD5F930A}"
       DTS:From="Package\EXP_Dummy"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 6"
@@ -7253,7 +7239,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
       DTS:CreationName=""
-      DTS:DTSID="{42D70406-E6FE-403D-812D-8F60D515D93F}"
+      DTS:DTSID="{C76A8F80-0765-4624-9B8F-2CDAAA9F1BB0}"
       DTS:From="Package\SQC_LogRunning"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 7"
@@ -7261,7 +7247,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 8]"
       DTS:CreationName=""
-      DTS:DTSID="{DB376D8D-C24E-444F-B120-F6A075B1F814}"
+      DTS:DTSID="{A431E12F-4368-488F-87DB-E7328A3F50E6}"
       DTS:From="Package\SQC_LogRunning"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 8"
@@ -7304,9 +7290,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           Id="Package\SQC_ETL\SQC_Processing\SQL_STG2DW"
           TopLeft="61.7222222222221,292.277777777778" />
         <NodeLayout
-          Size="147,42"
-          Id="Package\SQC_ETL\SQC_Processing\SQL_ClearLOG"
-          TopLeft="58.8333333333332,17.9444444444446" />
+          Size="165,42"
+          Id="Package\SQC_ETL\SQC_Processing\SQL_TruncateLOG"
+          TopLeft="44.8333333333332,17.9444444444446" />
         <EdgeLayout
           Id="Package\SQC_ETL\SQC_Processing.PrecedenceConstraints[Constraint]"
           TopLeft="133.666666666667,201.555555555556">
@@ -7331,7 +7317,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\SQC_ETL\SQC_Processing.PrecedenceConstraints[Constraint 1]"
-          TopLeft="132.472222222222,59.9444444444446">
+          TopLeft="129.972222222222,59.9444444444446">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -8337,6 +8323,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
+    design-time-name="Package\SQC_ETL\SQC_Processing\DF_ReadFile\DS_DestTableHashes">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\SQC_ETL\SQC_Processing\DF_ReadFile\DEST_LOG">
     <Properties>
       <Property>
@@ -8346,14 +8340,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\SQC_ETL\SQC_Processing\DF_ReadFile\DS_DestTableHashes">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

@@ -101,7 +101,7 @@
         SSIS:Name="Sensitive">1</SSIS:Property>
       <SSIS:Property
         SSIS:Name="Value"
-        SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAANJMTs9bdO02kSIVXcB64WgAAAAACAAAAAAAQZgAAAAEAACAAAAAFe/rMJahknhgIawk2wytofuKX62l98XmnFKcL935ziAAAAAAOgAAAAAIAACAAAAAZ9fGv53vX+3J6T+4qxkWNAE+MIDrrO44b51Yk0DOOx4AAAABicLaMIstVDXKUeEAvQf+pvZyyxPALIT+baUsbX2VpWVmXj0wsDj6Vq//ih7FY1B46Js/5MQxjMZIBsw3xVoaeLc8UHQ/py93rw0iq4QlkNgCD31RzhxzkWA65Ie6G7cwxgwbO/riak+Ekiz3QP2niVlgb9IpPnPn2uvyHmAKP4EAAAABf0qg/2a/DPPhDy/MH+ODTmWWDlstOx45ION+AJwojXMJYOXRqZb9/dxUMIIX7leNg/ZlCM9WrcHL/aUyDakWx</SSIS:Property>
+        SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAwaPKDlfgnEqyDNvDtYTqEwAAAAACAAAAAAAQZgAAAAEAACAAAADb7eGgsghLLiklguMMAicLLGeVuaPL30emZsca15LfawAAAAAOgAAAAAIAACAAAADVID8LC5x3OzwdELhRpGfcQBWgNx3SfSufshekfwd1GYAAAABWphTkRDXJd/7oLYhxrYtERYic06hXWfMdf9EAq7h6m1JTtPfbVympDW4Oi/CYohxSUqgVu6UdPl7BcAkQ/FJOcdDxazO0l1cFwSnDjlw0+MplSphEK5JloOGB6hIbcZ0uAzZ/eYla9T6kHZ3sn6IZHj9AZP2lTsPrX1KK4tO+c0AAAAC63vHv0elgfls1w4M8urK6ml9CQz/SOFWSkjGlXjVGZsD6E/C45Xx7Ngd1BEjKhDl3LBJqobVQS26WSIgHV67t</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>
@@ -146,6 +146,27 @@
         SSIS:Name="Value">ETLFramework</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
+    </SSIS:Properties>
+  </SSIS:Parameter>
+  <SSIS:Parameter
+    SSIS:Name="LogPersistenceInDays">
+    <SSIS:Properties>
+      <SSIS:Property
+        SSIS:Name="ID">{8ac27a01-557f-475e-ba52-89ee0e1daad7}</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="CreationName"></SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Description"></SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Required">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Sensitive">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Value">7</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="DataType">9</SSIS:Property>
     </SSIS:Properties>
   </SSIS:Parameter>
 </SSIS:Parameters>

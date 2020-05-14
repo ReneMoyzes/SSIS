@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="ADO_SQL WWI"
+  DTS:DTSID="{7F753E31-4E05-4F29-BD8D-6ACE1B82587F}"
+  DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <DTS:PropertyExpression
+    DTS:Name="InitialCatalog">@[$Project::SQL_WWIDWH_InitialCatalog]</DTS:PropertyExpression>
+  <DTS:PropertyExpression
+    DTS:Name="ServerName">@[$Project::SQL_WWIDWH_ServerName]</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=X230\SQLSRV2017;Initial Catalog=WWI;Integrated Security=True;Application Name=SSIS-SSIS Vyuka 1-{7F753E31-4E05-4F29-BD8D-6ACE1B82587F}X230\SQLSRV2017.WWI;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
